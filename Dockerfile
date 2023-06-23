@@ -2,6 +2,8 @@ FROM inseefrlab/onyxia-rstudio:r4.2.3
 
 WORKDIR ${HOME}/ESA-Nowcasting-2023
 
+ARG TOKEN
+ENV GITHUB_TOKEN=${TOKEN}
 ENV RENV_CONFIG_REPOS_OVERRIDE=${CRAN}
 
 # System libs

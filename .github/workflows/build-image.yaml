@@ -49,6 +49,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
+          build-args: |
+            "TOKEN=${{ secrets.CLONE_TOKEN }}"
       - 
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
