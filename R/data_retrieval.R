@@ -372,35 +372,6 @@ get_data_from_wifo <- function(data_info) {
 
 # Utils
 
-get_weekend_days <- function(data_info, challenges_info) {
-  date_to_pred <- lubridate::ymd(challenges_info$DATES$date_to_pred)
-  subset_lists <- Filter(function(x) x$source == "Week-end", data_info)
-
-  data <- lapply(subset_lists, function(x) {
-    dates <- seq(as.Date(x[["init_date"]]), date_to_pred + months(1), by = "month")
-    nb_weekend_days <- dplyr::tibble(
-      month = lubridate::month(dates), year = lubridate::year(dates),
-      weekends = numeric(length(dates))
-    )
-    for (i in 1:length(dates)) {
-      month_start <- as.Date(paste(
-        nb_weekend_days$year[i], nb_weekend_days$month[i], 1,
-        sep = "-"
-      ))
-      month_end <- as.Date(paste(nb_weekend_days$year[i],
-        nb_weekend_days$month[i],
-        lubridate::days_in_month(month_start),
-        sep = "-"
-      ))
-      nb_weekend_days$weekends[i] <- sum(
-        lubridate::wday(seq(month_start, month_end, by = "day")) %in% c(7, 1)
-      )
-    }
-
-    return(nb_weekend_days)
-  })
-  return(data)
-}
 
 get_data <- function(data_info, list_db) {
   list_data <- lapply(

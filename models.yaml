@@ -76,8 +76,7 @@ REGARIMA:
     outlier.tc: FALSE
     outlier.usedefcv: FALSE
     outlier.cv: 3.5
-    usrdef.varEnabled: TRUE
-    
+    usrdef.varEnabled: TRUE 
   PVI:
     transform.function: "None"
     estimate.from: "2010-01-01"
@@ -96,7 +95,6 @@ REGARIMA:
     outlier.usedefcv: FALSE
     outlier.cv: 3.5
     usrdef.varEnabled: TRUE
-
   TOURISM:
     NO_CVS:
       spec: "TRfull"
