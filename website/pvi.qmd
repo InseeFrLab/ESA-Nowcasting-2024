@@ -1,0 +1,168 @@
+---
+title: Production volume in industry challenge
+---
+
+```{ojs}
+challenge = "PVI"
+```
+
+The monthly PVI indicator represents the production index in industry.
+The objective of the index is to measure changes in the volume of output at monthly intervals.
+It provides a measure of the volume trend in value added over a given reference period.
+The production index is calculated in the form of a Laspeyres type index.
+
+## Next forecast for a given country
+
+```{ojs}
+viewof country = Inputs.select(Object.values(country_map), {
+  label: html`<b>Select a country:</b>`,
+  placeholder: "Enter a country name",
+  unique: true
+  })
+```
+
+```{ojs}
+//| panel: center
+
+Plot.plot({
+  grid: true,
+  y: {
+    label: "↑ Production volume in industry",
+  },  
+  x: {
+      label: "Year",
+      domain: range
+    },
+  marks: [
+    Plot.line(historical, {
+        tip: true,
+        x: "date", 
+        y: "values", 
+        stroke: "black",
+        title: (d) =>
+              `${d.date.toLocaleString("en-UK", {
+                month: "long",
+                year: "numeric"
+              })}\n ${d.values} `
+        }),
+    Plot.dot(predictions, {
+        tip: true,
+        x: "date", 
+        y: "values",
+        fill: "model",
+        title:  (d) =>
+                `${d.model}\n ${d.date.toLocaleString("en-UK", {
+                  month: "long",
+                  year: "numeric"
+                })} : ${d.values} `
+        })
+  ],
+  color: {legend: true}
+})
+```
+
+```{ojs}
+//| panel: center
+
+dates = {
+  const data = historical.map(d => d.date)
+  data.push(predictions.map(d => d.date)[0])
+  return data  
+}
+
+viewof range = offsetInterval(dates, {
+  value: [ dates[dates.length-90], dates[dates.length-1] ],
+  format: ([a, b]) => htl.html`<span ${{
+    style: "display: flex; justify-content: space-between"
+  }}>
+    ${a.toISOString("en-UK").slice(0, 10)}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ${b.toISOString("en-UK").slice(0, 10)}
+  </span>`
+})
+```
+
+## Country-specific forecast summary by model
+
+```{ojs}
+viewof form = Inputs.form({
+  model: Inputs.checkbox(models, {value: models}),
+  countries: Inputs.select(["All", ...Object.values(country_map)], {multiple: true, value: ["All"], width: 50, size: 1})
+})
+
+```
+
+```{ojs}
+viewof rows = Inputs.table(summary_table,{
+  rows: 25,
+  maxWidth: 840,
+  multiple: false,
+  layout: "fixed"
+})
+```
+
+<!-- DATA -->
+
+```{r}
+#| cache: false
+
+data <- targets::tar_read(data, store = "store_data")
+targets::tar_load(predictions_pvi, store = "store_pvi")
+
+sample <- data$PVI$data |>
+  dplyr::filter((nace_r2 %in% "B-D"))
+
+ojs_define(data = sample, pred = predictions_pvi)
+```
+
+```{ojs}
+historical = format_historical_data(data, country_iso)
+```
+
+```{ojs}
+predictions = format_pred_data(pred, country_iso)
+```
+
+```{ojs}
+summary_table = format_summary_table_data(pred, form.countries, form.model, country_map)
+```
+   
+<!-- HELPERS -->
+
+```{ojs}
+country_map = get_countries_per_challenge(mapping_countries_weights, challenge)
+```
+
+```{ojs}
+country_iso = Object.keys(country_map).find(key => country_map[key] === country);
+```
+
+```{ojs}
+models = ["REG-ARIMA", "DFM", "ETS", "XGBOOST", "LSTM"]
+```
+
+<!-- DEPENDENCIES -->
+
+```{ojs}
+import { 
+    format_historical_data,
+    format_pred_data,
+    format_summary_table_data,
+    get_countries_per_challenge,
+    mapping_countries_weights,
+     } from "./utils/utils.qmd"
+
+```
+
+
+```{ojs}
+import {offsetInterval} from '@mootari/offset-slider'
+```
+
+```{ojs}
+Plot = require("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.8/dist/plot.umd.min.js")
+```
