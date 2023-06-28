@@ -33,7 +33,7 @@ save_entries <- function(challenge, entries, challenges_info, save_s3) {
   if (save_s3) {
     aws.s3::put_object(
       file = paste0("Submissions/", challenge, "/results_", month, ".json"),
-      bucket = "projet-esa-nowcasting", object = paste0("submissions/", challenge, "/results_", month, ".json"),
+      bucket = "projet-esa-nowcasting", object = paste0("2024/submissions/", challenge, "/results_", month, ".json"),
       region = ""
     )
 
@@ -41,7 +41,7 @@ save_entries <- function(challenge, entries, challenges_info, save_s3) {
     save(data, file = paste0("data_", challenge, "_", month, ".RData"))
     aws.s3::put_object(
       file = paste0("data_", challenge, "_", month, ".RData"),
-      bucket = "projet-esa-nowcasting", object = paste0("data/", challenge, "/data_", month, ".RData"),
+      bucket = "projet-esa-nowcasting", object = paste0("2024/data/", challenge, "/data_", month, ".RData"),
       region = ""
     )
   }
@@ -64,12 +64,12 @@ reorder_entries <- function(entries, filename) {
 save_data <- function(data, challenges_info, save_s3) {
   month <- challenges_info$DATES$month_to_pred
 
-  if (!dir.exists(paste0("data/", month))) {
-    dir.create(paste0("data/", month))
+  if (!dir.exists(paste0("2024/data/", month))) {
+    dir.create(paste0("2024/data/", month))
   }
 
   mapply(function(x, name) {
-    filename <- paste0("data/", month, "/", name, ".parquet")
+    filename <- paste0("2024/data/", month, "/", name, ".parquet")
     arrow::write_parquet(
       x$data,
       filename
@@ -84,7 +84,7 @@ save_data <- function(data, challenges_info, save_s3) {
     }
   }, data, names(data), SIMPLIFY = FALSE)
 
-  paste0("data/", month)
+  paste0("2024/data/", month)
 }
 
 

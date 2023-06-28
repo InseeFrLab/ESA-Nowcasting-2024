@@ -60,7 +60,7 @@ jobs:
         run: |
           targets::tar_source(files = "R")
           put_dir_s3(local_dir = "store_data/",
-                     s3_dir = "targets-data/store_data/",
+                     s3_dir = "2024/targets-data/store_data/",
                      bucket = "projet-esa-nowcasting")
         shell: Rscript {0} 
         env:
@@ -138,7 +138,7 @@ jobs:
         run: |
          targets::tar_source(files = "R")
          put_dir_s3(local_dir = "store_gas/",
-                     s3_dir = "targets-data/store_gas/",
+                     s3_dir = "2024/targets-data/store_gas/",
                      bucket = "projet-esa-nowcasting")
         shell: Rscript {0} 
         env:
@@ -216,7 +216,7 @@ jobs:
         run: |
          targets::tar_source(files = "R")
          put_dir_s3(local_dir = "store_oil/",
-                     s3_dir = "targets-data/store_oil/",
+                     s3_dir = "2024/targets-data/store_oil/",
                      bucket = "projet-esa-nowcasting")
         shell: Rscript {0} 
         env:
@@ -294,7 +294,7 @@ jobs:
         run: |
          targets::tar_source(files = "R")
          put_dir_s3(local_dir = "store_electricity/",
-                     s3_dir = "targets-data/store_electricity/",
+                     s3_dir = "2024/targets-data/store_electricity/",
                      bucket = "projet-esa-nowcasting")
         shell: Rscript {0} 
         env:
@@ -354,7 +354,7 @@ jobs:
         run: |
          targets::tar_source(files = "R")
          put_dir_s3(local_dir = "store_post_mortem/",
-                     s3_dir = "targets-data/store_post_mortem/",
+                     s3_dir = "2024/targets-data/store_post_mortem/",
                      bucket = "projet-esa-nowcasting")
         shell: Rscript {0} 
         env:
@@ -402,7 +402,7 @@ jobs:
       - name: Retrieve stores from s3
         run: |
           export MC_HOST_s3=https://$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY@$AWS_S3_ENDPOINT
-          mc cp -r s3/projet-esa-nowcasting/targets-data/ .
+          mc cp -r s3/projet-esa-nowcasting/2024/targets-data/ .
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
