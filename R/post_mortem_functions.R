@@ -7,10 +7,10 @@
 #' These functions enable retrospective examination, identification of insights, 
 #' and lessons learned from the predictions made.
 
-create_table_past_submissions <- function(submitted_models = yaml::read_yaml("submitted_models.yaml"),
-                                          challenge = "PPI",
-                                          submissions_folder = "Submissions",
-                                          by_entry = FALSE) {
+create_table_past_submissions <- function(submitted_models,
+                                          challenge,
+                                          submissions_folder,
+                                          by_entry) {
   past_months <- submitted_models$PAST_MONTHS
   date <- as.Date(submitted_models$START_DATE)
   df_submissions <- data.frame(matrix(ncol = 4, nrow = 0))
@@ -52,13 +52,10 @@ create_table_past_submissions <- function(submitted_models = yaml::read_yaml("su
 }
 
 
-get_recent_data <- function(data = get_data(
-                              yaml::read_yaml("data.yaml"),
-                              yaml::read_yaml("challenges.yaml")
-                            ),
-                            config_env = yaml::read_yaml("challenges.yaml"),
-                            submitted_models = yaml::read_yaml("submitted_models.yaml"),
-                            challenge = "PPI") {
+get_recent_data <- function(data,
+                            config_env,
+                            submitted_models,
+                            challenge) {
   recent_data <- data[[challenge]]$data |>
     filter(
       nace_r2 == config_env[[challenge]]$principal_nace,

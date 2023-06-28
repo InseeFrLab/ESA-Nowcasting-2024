@@ -56,63 +56,63 @@ list(
     command = yaml::read_yaml(submitted_models_file),
   ),
   tar_target(
-    name = past_submissions_ppi,
-    command = create_table_past_submissions(submitted_models, "PPI", submissions_folder = "Submissions", by_entry = FALSE)
+    name = past_submissions_gas,
+    command = create_table_past_submissions(submitted_models, "GAS", submissions_folder = "Submissions", by_entry = FALSE)
   ),
   tar_target(
-    name = past_submissions_ppi_by_entry,
-    command = create_table_past_submissions(submitted_models, "PPI", submissions_folder = "Submissions", by_entry = TRUE)
+    name = past_submissions_gas_by_entry,
+    command = create_table_past_submissions(submitted_models, "GAS", submissions_folder = "Submissions", by_entry = TRUE)
   ),
   tar_target(
-    name = recent_data_ppi,
-    command = get_recent_data(data, challenges, submitted_models, "PPI")
+    name = recent_data_gas,
+    command = get_recent_data(data, challenges, submitted_models, "GAS")
   ),
   tar_target(
-    name = past_errors_ppi,
-    command = get_residuals_past_months(past_submissions_ppi, recent_data_ppi)
+    name = past_errors_gas,
+    command = get_residuals_past_months(past_submissions_gas, recent_data_gas)
   ),
   tar_target(
-    name = past_errors_ppi_by_entry,
-    command = get_residuals_past_months(past_submissions_ppi_by_entry, recent_data_ppi)
+    name = past_errors_gas_by_entry,
+    command = get_residuals_past_months(past_submissions_gas_by_entry, recent_data_gas)
   ),
   tar_target(
-    name = past_submissions_pvi,
-    command = create_table_past_submissions(submitted_models, "PVI", submissions_folder = "Submissions", by_entry = FALSE)
+    name = past_submissions_oil,
+    command = create_table_past_submissions(submitted_models, "OIL", submissions_folder = "Submissions", by_entry = FALSE)
   ),
   tar_target(
-    name = past_submissions_pvi_by_entry,
-    command = create_table_past_submissions(submitted_models, "PVI", submissions_folder = "Submissions", by_entry = TRUE)
+    name = past_submissions_oil_by_entry,
+    command = create_table_past_submissions(submitted_models, "OIL", submissions_folder = "Submissions", by_entry = TRUE)
   ),
   tar_target(
-    name = recent_data_pvi,
-    command = get_recent_data(data, challenges, submitted_models, "PVI")
+    name = recent_data_oil,
+    command = get_recent_data(data, challenges, submitted_models, "OIL")
   ),
   tar_target(
-    name = past_errors_pvi,
-    command = get_residuals_past_months(past_submissions_pvi, recent_data_pvi)
+    name = past_errors_oil,
+    command = get_residuals_past_months(past_submissions_oil, recent_data_oil)
   ),
   tar_target(
-    name = past_errors_pvi_by_entry,
-    command = get_residuals_past_months(past_submissions_pvi_by_entry, recent_data_pvi)
+    name = past_errors_oil_by_entry,
+    command = get_residuals_past_months(past_submissions_oil_by_entry, recent_data_oil)
   ),
   tar_target(
-    name = past_submissions_tourism,
-    command = create_table_past_submissions(submitted_models, "TOURISM", submissions_folder = "Submissions", by_entry = FALSE)
+    name = past_submissions_electricity,
+    command = create_table_past_submissions(submitted_models, "ELECTRICITY", submissions_folder = "Submissions", by_entry = FALSE)
   ),
   tar_target(
-    name = past_submissions_tourism_by_entry,
-    command = create_table_past_submissions(submitted_models, "TOURISM", submissions_folder = "Submissions", by_entry = TRUE)
+    name = past_submissions_electricity_by_entry,
+    command = create_table_past_submissions(submitted_models, "ELECTRICITY", submissions_folder = "Submissions", by_entry = TRUE)
   ),
   tar_target(
-    name = recent_data_tourism,
-    command = get_recent_data(data, challenges, submitted_models, "TOURISM")
+    name = recent_data_electricity,
+    command = get_recent_data(data, challenges, submitted_models, "ELECTRICITY")
   ),
   tar_target(
-    name = past_errors_tourism,
-    command = get_residuals_past_months(past_submissions_tourism, recent_data_tourism)
+    name = past_errors_electricity,
+    command = get_residuals_past_months(past_submissions_electricity, recent_data_electricity)
   ),
   tar_target(
-    name = past_errors_tourism_by_entry,
-    command = get_residuals_past_months(past_submissions_tourism_by_entry, recent_data_tourism)
+    name = past_errors_electricity_by_entry,
+    command = get_residuals_past_months(past_submissions_electricity_by_entry, recent_data_electricity)
   )
 )

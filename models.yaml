@@ -1,5 +1,5 @@
 XGBOOST:
-  PPI:
+  GAS:
     nb_months_past_to_use : 24
     nb_months_past_to_use_others : 4
     nb_years_past_to_use : 0
@@ -15,7 +15,7 @@ XGBOOST:
       best_max_depth : 5
       best_subsample : 0.5
       best_colsample_bytree : 0.5
-  PVI:
+  OIL:
     nb_months_past_to_use : 24
     nb_months_past_to_use_others : 4
     nb_years_past_to_use : 0
@@ -31,7 +31,7 @@ XGBOOST:
       best_max_depth : 5
       best_subsample : 0.5
       best_colsample_bytree : 0.5
-  TOURISM:
+  ELECTRICITY:
     nb_months_past_to_use : 10
     nb_months_past_to_use_others : 5
     nb_years_past_to_use : 5
@@ -50,22 +50,22 @@ XGBOOST:
   init_year: 2007
   
 LSTM:
-  PPI:
+  GAS:
     nb_months_past_to_use : 1
     nb_months_past_to_use_others : 4
     nb_years_past_to_use : 0
-  PVI:
+  OIL:
     nb_months_past_to_use : 1
     nb_months_past_to_use_others : 4
     nb_years_past_to_use : 0
-  TOURISM:
+  ELECTRICITY:
     nb_months_past_to_use : 1
     nb_months_past_to_use_others : 6
     nb_years_past_to_use : 1
   init_year: 2007
 
 REGARIMA:
-  PPI:
+  GAS:
     transform.function: "None"
     estimate.from: "2010-01-01"
     estimate.to: "2021-12-01"
@@ -77,7 +77,7 @@ REGARIMA:
     outlier.usedefcv: FALSE
     outlier.cv: 3.5
     usrdef.varEnabled: TRUE 
-  PVI:
+  OIL:
     transform.function: "None"
     estimate.from: "2010-01-01"
     automdl.enabled: TRUE
@@ -95,7 +95,7 @@ REGARIMA:
     outlier.usedefcv: FALSE
     outlier.cv: 3.5
     usrdef.varEnabled: TRUE
-  TOURISM:
+  ELECTRICITY:
     NO_CVS:
       spec: "TRfull"
       transform.function: "Auto"
@@ -146,30 +146,30 @@ REGARIMA:
       outlier.ls: TRUE
   
 ETS:
-  PPI:
+  GAS:
     initial_year: 2003
     last_year: 2023
-  PVI:
+  OIL:
     initial_year: 2003
     last_year: 2023
-  TOURISM:
+  ELECTRICITY:
     initial_year: 2003
     last_year: 2020
   
 DFM:
-  PPI:
+  GAS:
       start_sample: "2005-02-01"
       SA: FALSE
       max_lags: 4
       max_factor: 2
       collinearity_threshold: 0.9999
-  PVI:
+  OIL:
       start_sample: "2005-02-01"
       SA: FALSE
       max_lags: 4
       max_factor: 2
       collinearity_threshold: 0.9999
-  TOURISM:
+  ELECTRICITY:
       start_sample: "2005-02-01"
       SA: TRUE
       max_lags: 4

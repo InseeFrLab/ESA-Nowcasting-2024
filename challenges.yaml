@@ -1,15 +1,15 @@
-PPI :
+GAS :
   countries : ["AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "EL", "ES", "FI",
   "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", "RO",
   "SI", "SK"]
   principal_nace : B-E36
 
-PVI :
+OIL :
   countries : ["AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "EL", "ES", "FI",
   "FR", "HR", "HU", "LT", "LV", "MT", "PL", "PT", "RO", "SE", "SI", "SK"]
   principal_nace : B-D
 
-TOURISM :
+ELECTRICITY :
   countries : ["AT", "BE", "CY", "CZ", "DE", "DK", "EL", "ES", "FI", "FR", "HR",
   "HU", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", "RO", "SE", "SI", "SK"]
   principal_nace : I551-I553

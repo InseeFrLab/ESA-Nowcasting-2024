@@ -1,201 +1,23 @@
 PAST_MONTHS:
-  ['september',
-  'october',
-  'november',
-  'december',
-  'january',
-  'february',
-  'march',
-  'april'
-  ]
+  ['may']
   
 START_DATE: "2022-06-01"
 
-PPI:
-  september:
-    entry_1: NAIVE
-    entry_2: NAIVE_2
-    entry_3: ARIMA  # Top performer
-    entry_4:
-    entry_5:
-  october:
-    entry_1: NAIVE
-    entry_2: ARIMA  # Top performer
-    entry_3: XGBOOST
-    entry_4: DFM
-    entry_5: ETS
-  november:
-    entry_1: NAIVE
-    entry_2: REGARIMA
-    entry_3: XGBOOST
-    entry_4: DFM
-    entry_5: ETS  # Top performer
-  december:
-    entry_1: REGARIMA
-    entry_2: XGBOOST  # Top performer
-    entry_3: XGBOOST_DIFF
-    entry_4: DFM
-    entry_5: ETS
-  january:
-    entry_1: REGARIMA
-    entry_2: DFM  # Top performer
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5:
-  february:
-    entry_1: REGARIMA  # Top performer
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
-  march:
-    entry_1: REGARIMA  # Top performer
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
-  april:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
-  may:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
+GAS:
   june:
     entry_1: REGARIMA
     entry_2: DFM
     entry_3: ETS
     entry_4: XGBOOST
     entry_5: LSTM
-
-PVI:
-  september:
-    entry_1: NAIVE
-    entry_2: NAIVE_2  # Top performer
-    entry_3: ARIMA
-    entry_4:
-    entry_5:
-  october:
-    entry_1: NAIVE
-    entry_2: ARIMA
-    entry_3: XGBOOST
-    entry_4: DFM  # Top performer
-    entry_5: ETS
-  november:
-    entry_1: NAIVE
-    entry_2: REGARIMA  # Top performer
-    entry_3: XGBOOST
-    entry_4: DFM
-    entry_5: ETS
-  december:
-    entry_1: REGARIMA
-    entry_2: XGBOOST  # Top performer
-    entry_3: XGBOOST_DIFF
-    entry_4: DFM
-    entry_5: ETS
-  # january:  # Submitted
-  #   entry_1: NAIVE
-  #   entry_2: REGARIMA
-  #   entry_3: XGBOOST  # Top performer
-  #   entry_4: DFM
-  #   entry_5: ETS
-  january:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5:
-  february:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST  # Top performer
-    entry_5: LSTM
-  march:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST  # Top performer
-    entry_5: LSTM
-  april:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
-  may:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
+OIL:
   june:
     entry_1: REGARIMA
     entry_2: DFM
     entry_3: ETS
     entry_4: XGBOOST
     entry_5: LSTM
-
-TOURISM:
-  september:
-    entry_1: NAIVE
-    entry_2: NAIVE_2
-    entry_3: ARIMA  # Top performer
-    entry_4:
-    entry_5:
-  october:
-    entry_1: NAIVE
-    entry_2: ARIMA  # Top performer
-    entry_3: XGBOOST
-    entry_4: DFM
-    entry_5:
-  november:
-    entry_1: NAIVE
-    entry_2: ARIMA
-    entry_3: XGBOOST  # Top performer
-    entry_4: DFM
-    entry_5: ETS
-  december:
-    entry_1: REGARIMA
-    entry_2: XGBOOST
-    entry_3: XGBOOST_DIFF
-    entry_4: DFM
-    entry_5: ETS  # Top performer
-  january:
-    entry_1: REGARIMA
-    entry_2: DFM  # Top performer
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5:
-  february:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS  # Top performer
-    entry_4: XGBOOST
-    entry_5: LSTM
-  march:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
-  april:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
-  may:
-    entry_1: REGARIMA
-    entry_2: DFM
-    entry_3: ETS
-    entry_4: XGBOOST
-    entry_5: LSTM
+ELECTRICITY:
   june:
     entry_1: REGARIMA
     entry_2: DFM

@@ -69,7 +69,7 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
 
-  run-ppi-challenge:
+  run-gas-challenge:
     needs: [run-data-retrieval]
     runs-on: ubuntu-latest
     steps:
@@ -120,7 +120,7 @@ jobs:
           targets::tar_make()
         shell: Rscript {0} 
         env:
-          TAR_PROJECT: ppi
+          TAR_PROJECT: gas
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
@@ -129,7 +129,7 @@ jobs:
       - name: Commit and push submissions
         run: |
           git add Submissions/
-          git commit -m "New submission PPI with Github Actions"
+          git commit -m "New submission GAS with Github Actions"
           git fetch origin
           git merge origin/gh-submissions
           git push origin gh-submissions --set-upstream
@@ -137,8 +137,8 @@ jobs:
       - name: Save pipeline data in s3
         run: |
          targets::tar_source(files = "R")
-         put_dir_s3(local_dir = "store_ppi/",
-                     s3_dir = "targets-data/store_ppi/",
+         put_dir_s3(local_dir = "store_gas/",
+                     s3_dir = "targets-data/store_gas/",
                      bucket = "projet-esa-nowcasting")
         shell: Rscript {0} 
         env:
@@ -147,7 +147,7 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
 
-  run-pvi-challenge:
+  run-oil-challenge:
     needs: [run-data-retrieval]
     runs-on: ubuntu-latest
     steps:
@@ -198,7 +198,7 @@ jobs:
           targets::tar_make()
         shell: Rscript {0} 
         env:
-          TAR_PROJECT: pvi
+          TAR_PROJECT: oil
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
@@ -207,7 +207,7 @@ jobs:
       - name: Commit and push submissions
         run: |
           git add Submissions/
-          git commit -m "New submission PVI with Github Actions"
+          git commit -m "New submission OIL with Github Actions"
           git fetch origin
           git merge origin/gh-submissions
           git push origin gh-submissions --set-upstream
@@ -215,8 +215,8 @@ jobs:
       - name: Save pipeline data in s3
         run: |
          targets::tar_source(files = "R")
-         put_dir_s3(local_dir = "store_pvi/",
-                     s3_dir = "targets-data/store_pvi/",
+         put_dir_s3(local_dir = "store_oil/",
+                     s3_dir = "targets-data/store_oil/",
                      bucket = "projet-esa-nowcasting")
         shell: Rscript {0} 
         env:
@@ -225,7 +225,7 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
 
-  run-tourism-challenge:
+  run-electricity-challenge:
     needs: [run-data-retrieval]
     runs-on: ubuntu-latest
     steps:
@@ -276,7 +276,7 @@ jobs:
           targets::tar_make()
         shell: Rscript {0} 
         env:
-          TAR_PROJECT: tourism
+          TAR_PROJECT: electricity
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
@@ -285,7 +285,7 @@ jobs:
       - name: Commit and push submissions
         run: |
           git add Submissions/
-          git commit -m "New submission TOURISM with Github Actions"
+          git commit -m "New submission ELECTRICITY with Github Actions"
           git fetch origin
           git merge origin/gh-submissions
           git push origin gh-submissions --set-upstream
@@ -293,8 +293,8 @@ jobs:
       - name: Save pipeline data in s3
         run: |
          targets::tar_source(files = "R")
-         put_dir_s3(local_dir = "store_tourism/",
-                     s3_dir = "targets-data/store_tourism/",
+         put_dir_s3(local_dir = "store_electricity/",
+                     s3_dir = "targets-data/store_electricity/",
                      bucket = "projet-esa-nowcasting")
         shell: Rscript {0} 
         env:
@@ -304,7 +304,7 @@ jobs:
           AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
 
   run-post-mortem:
-    needs: [run-ppi-challenge, run-pvi-challenge, run-tourism-challenge]
+    needs: [run-gas-challenge, run-oil-challenge, run-electricity-challenge]
     runs-on: ubuntu-latest
     steps:
 
