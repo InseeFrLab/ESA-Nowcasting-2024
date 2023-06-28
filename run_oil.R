@@ -1,4 +1,4 @@
-#' Pipeline for PVI challenge
+#' Pipeline for OIL challenge
 #'
 #' This pipeline executes five different models (Reg-Arima, DFM, XGBoost, ETS, 
 #' LSTM) that were utilized in the ESA Nowcasting Challenge. The purpose is to 
@@ -59,54 +59,54 @@ list(
     command = read_data_from_s3(challenges, data_info),
   ),
   tar_target(
-    name = ets_pvi,
-    command = run_ETS("PVI", challenges, data, models)
+    name = ets_oil,
+    command = run_ETS("OIL", challenges, data, models)
   ),
   tar_target(
-    name = regarima_pvi,
-    command = run_regarima("PVI", challenges, data, models)
+    name = regarima_oil,
+    command = run_regarima("OIL", challenges, data, models)
   ),
   tar_target(
-    name = dfms_pvi,
-    command = run_DFMs("PVI", challenges, data, models)
+    name = dfms_oil,
+    command = run_DFMs("OIL", challenges, data, models)
   ),
   tar_target(
-    name = xgboost_pvi,
+    name = xgboost_oil,
     command = run_xgboost_per_country(
       data = data,
       config_models = models,
       config_env = challenges,
-      challenge = "PVI"
+      challenge = "OIL"
     )
   ),
   tar_target(
-    name = lstm_pvi,
+    name = lstm_oil,
     command = run_lstm_per_country(
       data = data,
       config_models = models,
       config_env = challenges,
-      challenge = "PVI"
+      challenge = "OIL"
     )
   ),
   tar_target(
-    name = predictions_pvi,
+    name = predictions_oil,
     command = bind_rows(list(
-      "entry_1" = regarima_pvi$preds %>% mutate(Entries = "REG-ARIMA"),
-      "entry_2" = dfms_pvi$preds %>% mutate(Entries = "DFM"),
-      "entry_3" = ets_pvi$preds %>% mutate(Entries = "ETS"),
-      "entry_4" = xgboost_pvi$preds %>% mutate(Entries = "XGBOOST"),
-      "entry_5" = lstm_pvi$preds %>% mutate(Entries = "LSTM")
+      "entry_1" = regarima_oil$preds %>% mutate(Entries = "REG-ARIMA"),
+      "entry_2" = dfms_oil$preds %>% mutate(Entries = "DFM"),
+      "entry_3" = ets_oil$preds %>% mutate(Entries = "ETS"),
+      "entry_4" = xgboost_oil$preds %>% mutate(Entries = "XGBOOST"),
+      "entry_5" = lstm_oil$preds %>% mutate(Entries = "LSTM")
     ))
   ),
   tar_target(
-    name = save_pvi,
+    name = save_oil,
     command = save_entries(
-      "PVI", list(
-        "entry_1" = regarima_pvi,
-        "entry_2" = dfms_pvi,
-        "entry_3" = ets_pvi,
-        "entry_4" = xgboost_pvi,
-        "entry_5" = lstm_pvi
+      "OIL", list(
+        "entry_1" = regarima_oil,
+        "entry_2" = dfms_oil,
+        "entry_3" = ets_oil,
+        "entry_4" = xgboost_oil,
+        "entry_5" = lstm_oil
       ),
       challenges,
       SAVE_TO_S3

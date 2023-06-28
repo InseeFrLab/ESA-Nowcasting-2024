@@ -109,7 +109,6 @@ prepare_url <- function(id, filters) {
   return(httr::build_url(url_list))
 }
 
-
 # Yahoo Finance
 
 get_data_from_yahoo <- function(data_info) {
@@ -137,7 +136,6 @@ get_data_from_yahoo <- function(data_info) {
   }, subset_lists, names(subset_lists), SIMPLIFY = FALSE)
   return(data)
 }
-
 
 # Google Trends
 # See https://www.oecd-ilibrary.org/docserver/6b9c7518-en.pdf?expires=1681837213&id=id&accname=guest&checksum=31B9D9D14F31F4C9DFC38934AD9A4D96
@@ -269,7 +267,6 @@ get_data_from_google_trends <- function(data_info) {
   return(data)
 }
 
-
 # Smaller sources of data
 
 get_data_from_ember <- function(data_info) {
@@ -294,7 +291,6 @@ get_data_from_ember <- function(data_info) {
   })
   return(data)
 }
-
 
 # Data for specific countries
 
@@ -369,9 +365,7 @@ get_data_from_wifo <- function(data_info) {
   return(data)
 }
 
-
 # Utils
-
 
 get_data <- function(data_info, list_db) {
   list_data <- lapply(
@@ -385,13 +379,13 @@ get_data <- function(data_info, list_db) {
 read_data_from_s3 <- function(challenges_info, data_info) {
   month <- challenges_info$DATES$month_to_pred
 
-  if (!dir.exists(paste0("data/", month))) {
-    dir.create(paste0("data/", month))
+  if (!dir.exists(paste0("2024/data/", month))) {
+    dir.create(paste0("2024/data/", month))
   }
 
   data <- mapply(function(x, source) {
-    url <- paste0("https://minio.lab.sspcloud.fr/projet-esa-nowcasting/data/", month, "/", source, ".parquet")
-    destfile <- paste0("data/", month, "/", source, ".parquet")
+    url <- paste0("https://minio.lab.sspcloud.fr/projet-esa-nowcasting/2024/data/", month, "/", source, ".parquet")
+    destfile <- paste0("2024/data/", month, "/", source, ".parquet")
     if (!file.exists(destfile)) {
       download.file(url, destfile)
     }

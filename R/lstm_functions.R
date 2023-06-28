@@ -17,10 +17,10 @@ options(dplyr.summarise.inform = FALSE)
 
 # we retrieve and format the data i
 
-build_data_lstm_one_country <- function(large_data = build_data_ml(model = "LSTM"),
-                                        config_env = yaml::read_yaml("challenges.yaml"),
-                                        challenge = "PPI",
-                                        country = "FR") {
+build_data_lstm_one_country <- function(large_data,
+                                        config_env,
+                                        challenge,
+                                        country) {
   df <- data.frame(large_data)
 
   #########################################
@@ -88,11 +88,11 @@ build_data_lstm_one_country <- function(large_data = build_data_ml(model = "LSTM
 #########################################
 
 # Train the model on past data for each country
-train_pred_lstm_one_country <- function(data_lstm = build_data_lstm_one_country(),
-                                        config_models = yaml::read_yaml("models.yaml"),
-                                        config_env = yaml::read_yaml("challenges.yaml"),
-                                        challenge = "PPI",
-                                        country = "FR") {
+train_pred_lstm_one_country <- function(data_lstm,
+                                        config_models,
+                                        config_env,
+                                        challenge,
+                                        country) {
   # Get the data
   df <- as.data.table(data_lstm)
 
@@ -172,10 +172,10 @@ train_pred_lstm_one_country <- function(data_lstm = build_data_lstm_one_country(
 }
 
 # loop over countries
-train_pred_lstm_per_country <- function(large_data = build_data_ml(model = "LSTM"),
-                                        config_models = yaml::read_yaml("models.yaml"),
-                                        config_env = yaml::read_yaml("challenges.yaml"),
-                                        challenge = "PPI") {
+train_pred_lstm_per_country <- function(large_data,
+                                        config_models,
+                                        config_env,
+                                        challenge) {
   #########################################
   # Initialize tables
   #########################################
@@ -253,10 +253,10 @@ train_pred_lstm_per_country <- function(large_data = build_data_ml(model = "LSTM
 #########################################
 
 # Master function calling data building and prediction function for LTSM
-run_lstm_per_country <- function(data = get_data(yaml::read_yaml("data.yaml")),
-                                 config_models = yaml::read_yaml("models.yaml"),
-                                 config_env = yaml::read_yaml("challenges.yaml"),
-                                 challenge = "PPI") {
+run_lstm_per_country <- function(data,
+                                 config_models,
+                                 config_env,
+                                 challenge) {
   large_data <- build_data_ml(
     data = data,
     config_models = config_models,
