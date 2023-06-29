@@ -66,7 +66,7 @@ LSTM:
 
 REGARIMA:
   GAS:
-    NO_CVS:
+    estim_spec:
       spec: "TRfull"
       transform.function: "Auto"
       estimate.from: "2014-01-01"
@@ -80,8 +80,7 @@ REGARIMA:
       outlier.usedefcv: FALSE
       outlier.cv: 3.5
       usrdef.varEnabled: TRUE
-      
-    CVS:
+    sa_spec:
       preliminary.check: FALSE
       estimate.from: "2014-01-01"
       spec: "RSA5c"
@@ -90,8 +89,9 @@ REGARIMA:
       outlier.ao: TRUE
       outlier.tc: TRUE
       outlier.ls: TRUE
+    SA: TRUE
   OIL:
-    NO_CVS:
+    estim_spec:
       spec: "TRfull"
       transform.function: "Auto"
       estimate.from: "2014-01-01"
@@ -105,8 +105,7 @@ REGARIMA:
       outlier.usedefcv: FALSE
       outlier.cv: 3.5
       usrdef.varEnabled: TRUE
-      
-    CVS:
+    sa_spec:
       preliminary.check: FALSE
       estimate.from: "2014-01-01"
       spec: "RSA5c"
@@ -115,8 +114,9 @@ REGARIMA:
       outlier.ao: TRUE
       outlier.tc: TRUE
       outlier.ls: TRUE
+    SA: TRUE
   ELECTRICITY:
-    NO_CVS:
+    estim_spec:
       spec: "TRfull"
       transform.function: "Auto"
       estimate.from: "2008-01-01"
@@ -130,8 +130,7 @@ REGARIMA:
       outlier.usedefcv: FALSE
       outlier.cv: 3.5
       usrdef.varEnabled: TRUE
-      
-    CVS:
+    sa_spec:
       preliminary.check: FALSE
       estimate.from: "2008-01-01"
       spec: "RSA5c"
@@ -140,7 +139,8 @@ REGARIMA:
       outlier.ao: TRUE
       outlier.tc: TRUE
       outlier.ls: TRUE
-  
+    SA: TRUE
+      
 ETS:
   GAS:
     initial_year: 2014
