@@ -19,7 +19,7 @@ To get started with SSPCloud:
 - Step 0: Go to [https://datalab.sspcloud.fr/home](https://datalab.sspcloud.fr/home). Click on **Sign In** and then **Create an account** with your academic or institutional email address.
 - Step 1: Click [here](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&init.personalInit=%C2%ABhttps%3A%2F%2Fminio.lab.sspcloud.fr%2Fprojet-esa-nowcasting%2Finit.sh%C2%BB&git.cache=%C2%AB9999%C2%BB&git.repository=%C2%ABhttps%3A%2F%2Fgithub.com%2FInseeFrLab%2FESA-Nowcasting-2024.git%C2%BB) or on the orange badge on top of the page.
 - Step 2: **Open** the service and follow the instructions regarding *username* and *credentials*.
-- Step 3: **Open a new project** by clicking the following file: `~/work/ESA-Nowcasting-2023/ESA-Nowcasting-2024.Rproj`.
+- Step 3: **Open a new project** by clicking the following file: `~/work/ESA-Nowcasting-2024/ESA-Nowcasting-2024.Rproj`.
 - Step 4: Ensure all necessary packages are installed by executing the ```renv::restore()``` command in the console. If prompted to proceed with the installation, enter `y`.
 
 You are all set!
@@ -71,7 +71,7 @@ Note that the data used for the challenges is stored in a private bucket, and wr
 
 ### Website
 
-The project automatically generates a website at the end of a pipeline run, which can be found in the `website/` folder. The website provides detailed information about the methodology used, the data sources employed, and the performance of the different models. The website is built using [Quarto](https://quarto.org/), an open-source tool for scientific documents and reports. You can access the website at https://inseefrlab.github.io/ESA-Nowcasting-2023/ and explore the various sections to learn more about our approach and results.
+The project automatically generates a website at the end of a pipeline run, which can be found in the `website/` folder. The website provides detailed information about the methodology used, the data sources employed, and the performance of the different models. The website is built using [Quarto](https://quarto.org/), an open-source tool for scientific documents and reports. You can access the website at https://inseefrlab.github.io/ESA-Nowcasting-2024/ and explore the various sections to learn more about our approach and results.
 
 ## Licence
 
