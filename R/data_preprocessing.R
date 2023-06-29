@@ -5,6 +5,7 @@
 
 
 # Utils
+
 get_latest_dates <- function(data, var) {
   # Returns a list with last available value for each variable of the xts dataset
   return(as.character(last(zoo::index(data)[!is.na(data[, var])])))
@@ -292,7 +293,7 @@ build_data_ml <- function(data, config_models, config_env, challenge, model) {
     df_challenge <- df_challenge |>
       mutate(!!variable := lag(!!rlang::sym(challenge), n = i))
   }
-  if (challenge == "TOURISM") {
+  if (config_models[[model]][[challenge]]$nb_years_past_to_use > 0) {
     for (i in 1:(config_models[[model]][[challenge]]$nb_years_past_to_use)) {
       variable <- paste(challenge, "minus", i, "years", sep = "_")
       df_challenge <- df_challenge |>

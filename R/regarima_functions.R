@@ -18,7 +18,7 @@ build_data_regarima <- function(challenge, challenges_info, data, models, countr
     # y <- replace(y, (floor(time(y)) %in% c(2020, 2021)) & is.na(y), 1) # replace NA by 1 during covid period
     # y <- replace(y, (floor(time(y)) %in% c(2020, 2021)) & y == 0, 1) # replace 0 by 1 during covid period
 
-    # specific treatment for tourism challenge : seasonal-adjustment of the target series
+    # specific treatment for challenges with seasonality : seasonal-adjustment of the target series
     result_x13 <- desaiso(y, challenge, models)
     y_sa <- result_x13$final$series[, "sa"]
     # Projected seasonal coefficient at the predicted date : necessary to produce the non-SA prediction
@@ -62,7 +62,7 @@ desaiso <- function(serie, challenge, models) {
 create_regressors <- function(challenge, challenges_info, data, models, country) {
   date_to_pred <- ymd(challenges_info$DATES$date_to_pred)
 
-  # Defining regressors for PPI challenge
+  # Defining regressors for challenges
     brent <- reshape_daily_data(data, "Yahoo") |>
       mutate(BRENT = BRENT.Adjusted / EUR_USD.Adjusted) |>
       select(time, BRENT) |>
@@ -75,7 +75,7 @@ create_regressors <- function(challenge, challenges_info, data, models, country)
     dlbrent_1 <- stats::lag(dlbrent, -1)
     dlbrent_2 <- stats::lag(dlbrent, -2)
 
-    # Minimal regressors list for PPI challenge
+    # Minimal regressors list for challenges
     X <- ts.union(dlbrent, dlbrent_1, dlbrent_2)
 
   return(X)
@@ -90,7 +90,7 @@ estimate_regarima <- function(challenge, data, models, country, h) {
 
   parameters <- c(parameters, list(usrdef.var = data$X))
 
-  # Fine-tunning on the length of the estimation period (especially due to contraints on availability or the quality)
+  # Fine-tuning on the length of the estimation period (especially due to contraints on availability or the quality)
   # if (challenge == "PPI") {
   #   if (country %in% c("EE")) {
   #     parameters$estimate.from <- "2012-01-01"
