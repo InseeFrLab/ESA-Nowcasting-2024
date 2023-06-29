@@ -20,14 +20,10 @@ build_data_dfms <- function(challenge, challenges_info, data_info, models_info, 
     reshape_gtrends_data(selected_data, country)
   )
 
-  if (country == "DE" &
-    !(purrr::is_empty(Filter(function(x) (x$source == "Destatis"), selected_data)))) {
-    data_list <- c(data_list, list(reshape_daily_data(selected_data, "Destatis")))
-  }
 
   DB <- data_list |>
     purrr::reduce(full_join, by = "time") |>
-    filter(time > as.Date("2000-01-01")) |> # Max 2004-09 # 2003 ok BG
+    filter(time > as.Date("2008-01-01")) |> 
     arrange(time)
 
   DB <- xts(as.data.frame(DB[, -1]), order.by = as.Date(DB[, 1] |>
