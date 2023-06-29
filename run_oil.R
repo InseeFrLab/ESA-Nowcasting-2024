@@ -63,19 +63,19 @@ list(
     command = read_data_from_s3(challenges, data_info),
   ),
   tar_target(
-    name = ets_oil,
-    command = run_ETS(challenge, challenges, data, models)
-  ),
-  tar_target(
-    name = regarima_oil,
+    name = regarima_oil,  # Entry 1
     command = run_regarima(challenge, challenges, data, models)
   ),
   tar_target(
-    name = dfms_oil,
+    name = dfms_oil,  # Entry 2
     command = run_DFMs(challenge, challenges, data, models)
   ),
   tar_target(
-    name = xgboost_oil,
+    name = ets_oil,  # Entry 3
+    command = run_ETS(challenge, challenges, data, models)
+  ),
+  tar_target(
+    name = xgboost_oil,  # Entry 4
     command = run_xgboost_per_country(
       data = data,
       config_models = models,
@@ -84,7 +84,7 @@ list(
     )
   ),
   tar_target(
-    name = lstm_oil,
+    name = lstm_oil,  # Entry 5
     command = run_lstm_per_country(
       data = data,
       config_models = models,
