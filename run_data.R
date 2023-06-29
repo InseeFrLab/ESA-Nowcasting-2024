@@ -56,6 +56,10 @@ list(
     command = get_data_from_yahoo(data_info),
   ),
   tar_target(
+    name = gtrends,
+    command = get_data_from_google_trends(data_info),
+  ),
+  tar_target(
     name = ember,
     command = get_data_from_ember(data_info),
   ),
@@ -64,12 +68,8 @@ list(
     command = get_data_from_destatis(data_info),
   ),
   tar_target(
-    name = gtrends,
-    command = get_data_from_google_trends(data_info),
-  ),
-  tar_target(
     name = data,
-    command = get_data(data_info, c(eurostat, yahoo, ember, destatis, gtrends))
+    command = get_data(data_info, c(eurostat, yahoo, gtrends, ember, destatis))
   ),
   tar_target(
     name = data_saved,
