@@ -1,4 +1,4 @@
-#' Pipeline for PPI challenge
+#' Pipeline for GAS challenge
 #'
 #' This pipeline executes five different models (Reg-Arima, DFM, XGBoost, ETS, 
 #' LSTM) that were utilized in the ESA Nowcasting Challenge. The purpose is to 
@@ -63,19 +63,19 @@ list(
     command = read_data_from_s3(challenges, data_info),
   ),
   tar_target(
-    name = ets_ppi,
+    name = ets_gas,
     command = run_ETS(challenge, challenges, data, models)
   ),
   tar_target(
-    name = regarima_ppi,
+    name = regarima_gas,
     command = run_regarima(challenge, challenges, data, models)
   ),
   tar_target(
-    name = dfms_ppi,
+    name = dfms_gas,
     command = run_DFMs(challenge, challenges, data, models)
   ),
   tar_target(
-    name = xgboost_ppi,
+    name = xgboost_gas,
     command = run_xgboost_per_country(
       data = data,
       config_models = models,
@@ -84,7 +84,7 @@ list(
     )
   ),
   tar_target(
-    name = lstm_ppi,
+    name = lstm_gas,
     command = run_lstm_per_country(
       data = data,
       config_models = models,
@@ -93,24 +93,24 @@ list(
     )
   ),
   tar_target(
-    name = predictions_ppi,
+    name = predictions_gas,
     command = bind_rows(list(
-      "entry_1" = regarima_ppi$preds %>% mutate(Entries = "REG-ARIMA"),
-      "entry_2" = dfms_ppi$preds %>% mutate(Entries = "DFM"),
-      "entry_3" = ets_ppi$preds %>% mutate(Entries = "ETS"),
-      "entry_4" = xgboost_ppi$preds %>% mutate(Entries = "XGBOOST"),
-      "entry_5" = lstm_ppi$preds %>% mutate(Entries = "LSTM")
+      "entry_1" = regarima_gas$preds %>% mutate(Entries = "REG-ARIMA"),
+      "entry_2" = dfms_gas$preds %>% mutate(Entries = "DFM"),
+      "entry_3" = ets_gas$preds %>% mutate(Entries = "ETS"),
+      "entry_4" = xgboost_gas$preds %>% mutate(Entries = "XGBOOST"),
+      "entry_5" = lstm_gas$preds %>% mutate(Entries = "LSTM")
     ))
   ),
   tar_target(
-    name = save_ppi,
+    name = save_gas,
     command = save_entries(
       challenge, list(
-        "entry_1" = regarima_ppi,
-        "entry_2" = dfms_ppi,
-        "entry_3" = ets_ppi,
-        "entry_4" = xgboost_ppi,
-        "entry_5" = lstm_ppi
+        "entry_1" = regarima_gas,
+        "entry_2" = dfms_gas,
+        "entry_3" = ets_gas,
+        "entry_4" = xgboost_gas,
+        "entry_5" = lstm_gas
       ),
       challenges,
       SAVE_TO_S3
