@@ -2,19 +2,19 @@ GAS :
   countries : ["AT", "BE", "BG", "CZ", "DE", "DK", "EE", "EL", "ES", "FI",
   "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", "RO",
   "SE", "SI", "SK"]
-  principal_nace : B-E36
+  principal_code : G3000
 
 OIL :
   countries : ["AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "EL", "ES", 
   "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT","NL", "PL", 
   "PT", "RO", "SE", "SI", "SK"]
-  principal_nace : B-D
+  principal_code : O4671
 
 ELECTRICITY :
   countries : ["AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "EL", "ES", 
   "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT","NL", "PL", 
   "PT", "RO", "SE", "SI", "SK"]
-  principal_nace : I551-I553
+  principal_code : E7000
 
 DATES :
   current_date : "2023-05-01"
