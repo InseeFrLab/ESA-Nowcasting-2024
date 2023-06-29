@@ -6,12 +6,12 @@
 build_data_regarima <- function(challenge, challenges_info, data, models, country) {
   selected_data <- Filter(function(x) (challenge %in% x$challenge) & ("REGARIMA" %in% x$model), data)
 
-  code_variable_interest <- challenges_info[[challenge]]$principal_nace
+  code_variable_interest <- challenges_info[[challenge]]$principal_code
   date_to_pred <- ymd(challenges_info$DATES$date_to_pred)
 
   # Target variable
   y <- data[[challenge]]$data |>
-    dplyr::filter((nace_r2 %in% code_variable_interest) & (geo == country)) |>
+    dplyr::filter((siec %in% code_variable_interest) & (geo == country)) |>
     tsbox::ts_ts()
 
   if (challenge == "TOURISM") {

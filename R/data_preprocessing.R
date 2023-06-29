@@ -281,8 +281,8 @@ build_data_ml <- function(data, config_models, config_env, challenge, model) {
 
   # Create a history table of the challenge's main variable
   df_challenge <- selected_data[[challenge]]$data |>
-    filter(nace_r2 == config_env[[challenge]]$principal_nace) |>
-    select(-nace_r2) |>
+    filter(siec == config_env[[challenge]]$principal_code) |>
+    select(-siec) |>
     full_join(df) |>
     rename(!!challenge := values) |>
     group_by(geo) |>
@@ -315,7 +315,7 @@ build_data_ml <- function(data, config_models, config_env, challenge, model) {
 
   # Remove duplicated column
   variable_with_main_nace <- paste(challenge,
-    config_env[[challenge]]$principal_nace,
+    config_env[[challenge]]$principal_code,
     sep = "_"
   )
 

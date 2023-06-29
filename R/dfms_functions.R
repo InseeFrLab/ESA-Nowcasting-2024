@@ -9,7 +9,7 @@
 build_data_dfms <- function(challenge, challenges_info, data_info, models_info, country) {
   date_to_pred <- ymd(challenges_info$DATES$date_to_pred)
   start_sample <- ymd(models_info$DFM[[challenge]]$start_sample)
-  code_variable_interest <- gsub("-", ".", challenges_info[[challenge]]$principal_nace)
+  code_variable_interest <- gsub("-", ".", challenges_info[[challenge]]$principal_code)
   var_to_predict <- paste(country, challenge, code_variable_interest, sep = "_")
 
   selected_data <- Filter(function(x) (challenge %in% x$challenge) & "DFM" %in% x$model, data_info)
@@ -161,7 +161,7 @@ estimate_dfm <- function(data, country, max_factor, max_lags) {
 
 forecast_dfm <- function(challenge, data, model, challenges_info, models_info, country) {
   date_to_pred <- ymd(challenges_info$DATES$date_to_pred)
-  code_variable_interest <- gsub("-", ".", challenges_info[[challenge]]$principal_nace)
+  code_variable_interest <- gsub("-", ".", challenges_info[[challenge]]$principal_code)
   if (models_info$DFM[[challenge]]$SA) {
     var_to_predict <- paste(country, challenge, code_variable_interest, "SA", sep = "_")
   } else {
@@ -239,7 +239,7 @@ run_DFMs <- function(challenge, challenges_info, data_info, models_info) {
   for (country in countries) {
     cat(paste0("Running estimation for ", country, "\n"))
 
-    code_variable_interest <- gsub("-", ".", challenges_info[[challenge]]$principal_nace)
+    code_variable_interest <- gsub("-", ".", challenges_info[[challenge]]$principal_code)
     var_to_predict <- paste(country, challenge, code_variable_interest, sep = "_")
     #########################################
     # Prepare data

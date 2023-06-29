@@ -58,10 +58,10 @@ get_recent_data <- function(data,
                             challenge) {
   recent_data <- data[[challenge]]$data |>
     filter(
-      nace_r2 == config_env[[challenge]]$principal_nace,
+      siec == config_env[[challenge]]$principal_code,
       time >= as.Date(submitted_models$START_DATE)
     ) |>
-    select(geo, time, nace_r2, values) |>
+    select(geo, time, siec, values) |>
     drop_na(values)
 
   return(recent_data)
@@ -73,7 +73,7 @@ get_residuals_past_months <- function(df_submissions = create_table_past_submiss
   df_residuals <- df_submissions |>
     rename(Prediction = value) |>
     left_join(recent_data |>
-      select(-nace_r2) |>
+      select(-siec) |>
       rename(
         Date = time,
         Country = geo,
