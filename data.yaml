@@ -233,6 +233,7 @@ EUR_USD:
     - OIL
     - ELECTRICITY
   model:
+    - REGARIMA
     - DFM
     - XGBOOST
     - LSTM
