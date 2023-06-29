@@ -1,6 +1,6 @@
 FROM inseefrlab/onyxia-rstudio:r4.2.3
 
-WORKDIR ${HOME}/ESA-Nowcasting-2023
+WORKDIR ${HOME}/ESA-Nowcasting-2024
 
 ARG TOKEN
 ENV GITHUB_TOKEN=${TOKEN}
