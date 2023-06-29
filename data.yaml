@@ -3,7 +3,7 @@
 GAS:
   name: "Supply, transformation and consumption of gas"
   short_name: "GAS"
-  source : Eurostat
+  source: Eurostat
   challenge: 
     - GAS
     - OIL
@@ -27,7 +27,7 @@ GAS:
 OIL:
   name: "Supply and transformation of oil and petroleum products"
   short_name: "OIL"
-  source : Eurostat
+  source: Eurostat
   challenge: 
     - GAS
     - OIL
@@ -51,7 +51,7 @@ OIL:
 ELECTRICITY:
   name: "Supply, transformation and consumption of electricity"
   short_name: "ELECTRICITY"
-  source : Eurostat
+  source: Eurostat
   challenge: 
     - GAS
     - OIL
@@ -75,7 +75,7 @@ ELECTRICITY:
 PPI:
   name: "Producer Price in Industry"
   short_name: "PPI"
-  source : Eurostat
+  source: Eurostat
   challenge: 
     - GAS
     - OIL
@@ -98,7 +98,7 @@ PPI:
 IPI:
   name: "Industrial Production Index"
   short_name: "IPI"
-  source : Eurostat
+  source: Eurostat
   challenge: 
     - GAS
     - OIL
@@ -121,7 +121,7 @@ IPI:
 PSURVEY:
   name: "Production surveys"
   short_name: "PSURVEY"
-  source : Eurostat
+  source: Eurostat
   challenge: 
     - GAS
     - OIL
@@ -144,7 +144,7 @@ PSURVEY:
 CSURVEY:
   name: "Consumer surveys"
   short_name: "CSURVEY"
-  source : Eurostat
+  source: Eurostat
   challenge:
     - GAS
     - OIL
@@ -165,7 +165,7 @@ CSURVEY:
 HICP:
   name: "Harmonised Index of Consumer Prices"
   short_name: "HICP"
-  source : Eurostat
+  source: Eurostat
   challenge: 
     - GAS
     - OIL
@@ -186,7 +186,7 @@ HICP:
 PVI:
   name: "Production Volume in Industry"
   short_name: "PVI"
-  source : Eurostat
+  source: Eurostat
   challenge: 
     - GAS
     - OIL
@@ -212,7 +212,7 @@ PVI:
 BRENT:
   name: "Brent Crude Oil Price"
   short_name: "BRENT"
-  source : Yahoo
+  source: Yahoo
   challenge: 
     - GAS
     - OIL
@@ -227,7 +227,7 @@ BRENT:
 EUR_USD:
   name: "EUR to USD Exchange Rate"
   short_name: "EUR_USD"
-  source : Yahoo
+  source: Yahoo
   challenge: 
     - GAS
     - OIL
@@ -242,7 +242,7 @@ EUR_USD:
 SP500:
   name: "S&P 500 Index Stock Price"
   short_name: "SP500"
-  source : Yahoo
+  source: Yahoo
   challenge: 
     - GAS
     - OIL
@@ -256,7 +256,7 @@ SP500:
 EUROSTOXX500:
   name: "Euro stoxx 50 Index Stock Price"
   short_name: "EUROSTOXX500"
-  source : Yahoo
+  source: Yahoo
   challenge: 
     - GAS
     - OIL
@@ -270,7 +270,7 @@ EUROSTOXX500:
 CAC40:
   name: "CAC 40 Index Stock Price"
   short_name: "CAC40"
-  source : Yahoo
+  source: Yahoo
   challenge: 
     - GAS
     - OIL
@@ -287,7 +287,7 @@ CAC40:
 GTRENDS_FUEL_GAS:
   name: "Google Trends - Fuel Economy & Gas Prices"
   short_name: "gtrends_fuel_gas"
-  source : gtrends
+  source: gtrends
   challenge:
     - GAS
     - OIL
@@ -305,7 +305,7 @@ GTRENDS_FUEL_GAS:
 GTRENDS_ELECTRICITY:
   name: "Google Trends - Electricity"
   short_name: "gtrends_electricity"
-  source : gtrends
+  source: gtrends
   challenge:
     - GAS
     - OIL
@@ -323,7 +323,7 @@ GTRENDS_ELECTRICITY:
 GTRENDS_OIL_GAS:
   name: "Google Trends - Oil & gas"
   short_name: "gtrends_oil_gas"
-  source : gtrends
+  source: gtrends
   challenge:
     - GAS
     - OIL
@@ -358,7 +358,7 @@ ELEC_PRICES:
 TOLL_DE:
   name: "Truck toll mileage index DE"
   short_name: "toll"
-  source : Destatis
+  source: Destatis
   challenge: 
     - GAS
     - OIL
