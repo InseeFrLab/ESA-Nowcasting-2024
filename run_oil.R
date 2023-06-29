@@ -28,6 +28,10 @@ SAVE_TO_S3 <- TRUE
 # Pipeline
 list(
   tar_target(
+    name = challenge,
+    command = "OIL"
+  ),
+  tar_target(
     name = data_info_file,
     command = "data.yaml",
     format = "file"
@@ -60,15 +64,15 @@ list(
   ),
   tar_target(
     name = ets_oil,
-    command = run_ETS("OIL", challenges, data, models)
+    command = run_ETS(challenge, challenges, data, models)
   ),
   tar_target(
     name = regarima_oil,
-    command = run_regarima("OIL", challenges, data, models)
+    command = run_regarima(challenge, challenges, data, models)
   ),
   tar_target(
     name = dfms_oil,
-    command = run_DFMs("OIL", challenges, data, models)
+    command = run_DFMs(challenge, challenges, data, models)
   ),
   tar_target(
     name = xgboost_oil,
@@ -76,7 +80,7 @@ list(
       data = data,
       config_models = models,
       config_env = challenges,
-      challenge = "OIL"
+      challenge = challenge
     )
   ),
   tar_target(
@@ -85,7 +89,7 @@ list(
       data = data,
       config_models = models,
       config_env = challenges,
-      challenge = "OIL"
+      challenge = challenge
     )
   ),
   tar_target(

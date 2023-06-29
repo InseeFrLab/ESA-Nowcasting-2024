@@ -29,6 +29,10 @@ SAVE_TO_S3 <- TRUE
 # Pipeline
 list(
   tar_target(
+    name = challenge,
+    command = "ELECTRICITY"
+  ),
+  tar_target(
     name = data_info_file,
     command = "data.yaml",
     format = "file"
@@ -61,15 +65,15 @@ list(
   ),
   tar_target(
     name = ets_electricity,
-    command = run_ETS("ELECTRICITY", challenges, data, models)
+    command = run_ETS(challenge, challenges, data, models)
   ),
   tar_target(
     name = regarima_electricity,
-    command = run_regarima("ELECTRICITY", challenges, data, models)
+    command = run_regarima(challenge, challenges, data, models)
   ),
   tar_target(
     name = dfms_electricity,
-    command = run_DFMs("ELECTRICITY", challenges, data, models)
+    command = run_DFMs(challenge, challenges, data, models)
   ),
   tar_target(
     name = xgboost_electricity,
@@ -77,7 +81,7 @@ list(
       data = data,
       config_models = models,
       config_env = challenges,
-      challenge = "ELECTRICITY"
+      challenge = challenge
     )
   ),
   tar_target(
@@ -86,7 +90,7 @@ list(
       data = data,
       config_models = models,
       config_env = challenges,
-      challenge = "ELECTRICITY"
+      challenge = challenge
     )
   ),
   tar_target(

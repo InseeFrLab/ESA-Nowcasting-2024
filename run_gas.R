@@ -29,7 +29,7 @@ SAVE_TO_S3 <- TRUE
 list(
   tar_target(
     name = challenge,
-    command = "PPI"
+    command = "GAS"
   ),
   tar_target(
     name = data_info_file,
