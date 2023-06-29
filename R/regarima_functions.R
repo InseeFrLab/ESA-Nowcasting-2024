@@ -63,20 +63,20 @@ create_regressors <- function(challenge, challenges_info, data, models, country)
   date_to_pred <- ymd(challenges_info$DATES$date_to_pred)
 
   # Defining regressors for challenges
-    brent <- reshape_daily_data(data, "Yahoo") |>
-      mutate(BRENT = BRENT.Adjusted / EUR_USD.Adjusted) |>
-      select(time, BRENT) |>
-      tsbox::ts_ts()
+  brent <- reshape_daily_data(data, "Yahoo") |>
+    mutate(BRENT = BRENT.Adjusted / EUR_USD.Adjusted) |>
+    select(time, BRENT) |>
+    tsbox::ts_ts()
 
-    brent_1 <- stats::lag(brent, -1)
-    brent_2 <- stats::lag(brent, -2)
+  brent_1 <- stats::lag(brent, -1)
+  brent_2 <- stats::lag(brent, -2)
 
-    dlbrent <- log(brent) - stats::lag(log(brent), -1)
-    dlbrent_1 <- stats::lag(dlbrent, -1)
-    dlbrent_2 <- stats::lag(dlbrent, -2)
+  dlbrent <- log(brent) - stats::lag(log(brent), -1)
+  dlbrent_1 <- stats::lag(dlbrent, -1)
+  dlbrent_2 <- stats::lag(dlbrent, -2)
 
-    # Minimal regressors list for challenges
-    X <- ts.union(dlbrent, dlbrent_1, dlbrent_2)
+  # Minimal regressors list for challenges
+  X <- ts.union(dlbrent, dlbrent_1, dlbrent_2)
 
   return(X)
 }
@@ -102,7 +102,7 @@ estimate_regarima <- function(challenge, data, models, country, h) {
   #     parameters$estimate.from <- "2015-01-01"
   #   }
   # }
-  # 
+  #
   # if (challenge == "PVI") {
   #   if (country %in% c("DE")) {
   #     parameters$estimate.from <- "2015-01-01"
@@ -154,8 +154,8 @@ run_regarima <- function(challenge, challenges_info, data, models) {
 
     regarima <- estimate_regarima(challenge, DB, models, country, h)
 
-    # The prediction is either derived from predictions (differenciated) applied to the 
-    # last observation of our interest variable or=a final correction is applied by 
+    # The prediction is either derived from predictions (differenciated) applied to the
+    # last observation of our interest variable or=a final correction is applied by
     # dividing by implicit seasonal coefficient
 
     if (models$REGARIMA[[challenge]]$SA) {

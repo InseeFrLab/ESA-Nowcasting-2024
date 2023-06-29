@@ -1,6 +1,6 @@
 #' Data Preprocessing functions
 #'
-#' This module provides a collection of functions for performing data 
+#' This module provides a collection of functions for performing data
 #' preprocessing tasks on different types of data or utils functions.
 
 

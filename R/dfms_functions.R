@@ -1,9 +1,9 @@
 #' Dynamic Factor Modeling functions
 #'
-#' This module provides a collection of functions for performing predictions 
-#' using Dynamic Factor Models (DFMs). Dynamic Factor Models are statistical 
+#' This module provides a collection of functions for performing predictions
+#' using Dynamic Factor Models (DFMs). Dynamic Factor Models are statistical
 #' models that incorporate latent factors to forecast variables of interest. The
-#' functions in this module facilitate the implementation and evaluation of 
+#' functions in this module facilitate the implementation and evaluation of
 #' DFMs for predictive modeling tasks.
 
 build_data_dfms <- function(challenge, challenges_info, data_info, models_info, country) {
@@ -23,7 +23,7 @@ build_data_dfms <- function(challenge, challenges_info, data_info, models_info, 
 
   DB <- data_list |>
     purrr::reduce(full_join, by = "time") |>
-    filter(time > as.Date("2008-01-01")) |> 
+    filter(time > as.Date("2008-01-01")) |>
     arrange(time)
 
   DB <- xts(as.data.frame(DB[, -1]), order.by = as.Date(DB[, 1] |>

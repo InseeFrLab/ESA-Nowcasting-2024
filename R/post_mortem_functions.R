@@ -1,10 +1,10 @@
 #' Post-Mortem Analysis functions
 #'
-#' This module provides a collection of functions for conducting data analysis 
+#' This module provides a collection of functions for conducting data analysis
 #' and performing a post-mortem evaluation of predictions. It includes functions
-#' specifically designed for analyzing the performance, accuracy, and quality 
-#' of predictions made in a forecasting or predictive modeling context. 
-#' These functions enable retrospective examination, identification of insights, 
+#' specifically designed for analyzing the performance, accuracy, and quality
+#' of predictions made in a forecasting or predictive modeling context.
+#' These functions enable retrospective examination, identification of insights,
 #' and lessons learned from the predictions made.
 
 create_table_past_submissions <- function(submitted_models,

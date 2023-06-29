@@ -1,8 +1,8 @@
 #' Data Retrieval functions
 #'
-#' This module provides a collection of functions for retrieving data from 
-#' different data sources. It includes functions specifically designed for 
-#' fetching data from various sources such as databases, APIs, files... 
+#' This module provides a collection of functions for retrieving data from
+#' different data sources. It includes functions specifically designed for
+#' fetching data from various sources such as databases, APIs, files...
 #' These functions facilitate the retrieval of data for further analysis.
 
 
@@ -93,7 +93,7 @@ prepare_url <- function(id, filters) {
   # prepare filters for query
   filters2 <- as.list(unlist(filters))
   names(filters2) <- rep(names(filters), lapply(filters, length))
-  
+
   # prepare url
   url_list <- list(
     scheme = "https",
@@ -104,7 +104,7 @@ prepare_url <- function(id, filters) {
     ),
     query = filters2
   )
-  
+
   class(url_list) <- "url"
   return(httr::build_url(url_list))
 }
