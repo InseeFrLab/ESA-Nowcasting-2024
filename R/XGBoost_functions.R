@@ -402,8 +402,8 @@ train_pred_xgboost_one_country <- function(data_xgboost,
 train_pred_xgboost_per_country <- function(large_data,
                                            config_models,
                                            config_env,
-                                           categorical_variables,
-                                           challenge) {
+                                           challenge,
+                                           categorical_variables = c("month", "year")) {
   challenge_to_predict <- paste(challenge, "to_predict", sep = "_")
   challenge_pred_residuals <- paste(challenge, "pred", "residuals", sep = "_")
 
@@ -488,8 +488,8 @@ run_grid_search_xgboost <- function(data,
                                     config_env,
                                     challenge,
                                     per_country,
-                                    categorical_variables,
-                                    country) {
+                                    country,
+                                    categorical_variables = c("geo", "month", "year")) {
   large_data <- build_data_ml(
     data = data,
     config_models = config_models,
@@ -524,8 +524,8 @@ run_grid_search_xgboost <- function(data,
 run_xgboost_europe <- function(data,
                                config_models,
                                config_env,
-                               categorical_variables,
-                               challenge) {
+                               challenge,
+                               categorical_variables = c("geo", "month", "year")) {
   large_data <- build_data_ml(
     data = data,
     config_models = config_models,
@@ -552,8 +552,8 @@ run_xgboost_europe <- function(data,
 run_xgboost_per_country <- function(data,
                                     config_models,
                                     config_env,
-                                    categorical_variables,
-                                    challenge) {
+                                    challenge,
+                                    categorical_variables = c("month", "year")) {
   large_data <- build_data_ml(
     data = data,
     config_models = config_models,
