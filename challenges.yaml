@@ -5,13 +5,15 @@ GAS :
   principal_code : G3000
 
 OIL :
-  countries : ["AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "EL", "ES", 
+  countries : ["AT", "BE", "BG", # "CY",
+  "CZ", "DE", "DK", "EE", "EL", "ES", 
   "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT","NL", "PL", 
   "PT", "RO", "SE", "SI", "SK"]
   principal_code : O4671
 
 ELECTRICITY :
-  countries : ["AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "EL", "ES", 
+  countries : ["AT", "BE", "BG", # "CY",
+  "CZ", "DE", "DK", "EE", "EL", "ES", 
   "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT","NL", "PL", 
   "PT", "RO", "SE", "SI", "SK"]
   principal_code : E7000
