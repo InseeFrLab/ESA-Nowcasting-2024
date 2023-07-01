@@ -77,7 +77,7 @@ jobs:
       - name: Checkout out repository
         uses: actions/checkout@v3
         with:
-          ref: gh-submissions
+          fetch-depth: 0
           token: ${{ secrets.TOKEN_CI }}
 
       - name: Configure Git
@@ -88,8 +88,9 @@ jobs:
       - name: Merge recent changes from main branch
         run: | 
           git fetch origin
-          git merge --allow-unrelated-histories -X theirs origin/main
-
+          git checkout -b gh-submissions origin/gh-submissions
+          git merge main
+          
       - name: Install python
         uses: actions/setup-python@v4
         with:
@@ -155,7 +156,7 @@ jobs:
       - name: Checkout out repository
         uses: actions/checkout@v3
         with:
-          ref: gh-submissions
+          fetch-depth: 0
           token: ${{ secrets.TOKEN_CI }}
 
       - name: Configure Git
@@ -166,7 +167,8 @@ jobs:
       - name: Merge recent changes from main branch
         run: | 
           git fetch origin
-          git merge --allow-unrelated-histories -X theirs origin/main
+          git checkout -b gh-submissions origin/gh-submissions
+          git merge main
 
       - name: Install python
         uses: actions/setup-python@v4
@@ -233,7 +235,7 @@ jobs:
       - name: Checkout out repository
         uses: actions/checkout@v3
         with:
-          ref: gh-submissions
+          fetch-depth: 0
           token: ${{ secrets.TOKEN_CI }}
 
       - name: Configure Git
@@ -244,8 +246,9 @@ jobs:
       - name: Merge recent changes from main branch
         run: | 
           git fetch origin
-          git merge --allow-unrelated-histories -X theirs origin/main
-
+          git checkout -b gh-submissions origin/gh-submissions
+          git merge main
+          
       - name: Install python
         uses: actions/setup-python@v4
         with:
@@ -311,8 +314,13 @@ jobs:
       - name: Checkout out repository
         uses: actions/checkout@v3
         with:
-          ref: gh-submissions
           token: ${{ secrets.TOKEN_CI }}
+          
+      - name: Merge submissions on main
+        run: |
+          git fetch origin
+          git merge origin/gh-submissions
+          git push origin main
 
       - name: Install python
         uses: actions/setup-python@v4
