@@ -77,6 +77,7 @@ jobs:
       - name: Checkout out repository
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           token: ${{ secrets.TOKEN_CI }}
 
       - name: Configure Git
@@ -155,6 +156,7 @@ jobs:
       - name: Checkout out repository
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           token: ${{ secrets.TOKEN_CI }}
 
       - name: Configure Git
@@ -233,6 +235,7 @@ jobs:
       - name: Checkout out repository
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           token: ${{ secrets.TOKEN_CI }}
 
       - name: Configure Git
