@@ -1,5 +1,5 @@
 ```{ojs}
-challenge = "TOURISM"
+challenge = "ELECTRICITY"
 ```
 
 # Post-mortem analysis of our forecasts per country
@@ -152,16 +152,16 @@ viewof doweighted = Inputs.toggle({label: "Weighted mean", value: false})
 ```{r}
 #| cache: false
 
-targets::tar_load(past_submissions_tourism, store = "store_post_mortem")
-targets::tar_load(recent_data_tourism, store = "store_post_mortem")
+targets::tar_load(past_submissions_electricity, store = "store_post_mortem")
+targets::tar_load(recent_data_electricity, store = "store_post_mortem")
 
-past_submissions_tourism <- past_submissions_tourism |>
+past_submissions_electricity <- past_submissions_electricity |>
   dplyr::filter(Entries %in% c("REGARIMA", "XGBOOST", "DFM", "ETS", "LSTM"))
 
-error_country_model <- past_submissions_tourism |>
+error_country_model <- past_submissions_electricity |>
   tibble::tibble() |>
   dplyr::rename(geo = Country, time = Date, forecast = value) |>
-  dplyr::inner_join(recent_data_tourism, by = c("geo", "time")) |>
+  dplyr::inner_join(recent_data_electricity, by = c("geo", "time")) |>
   dplyr::mutate(error_squared = (forecast - values)^2 / values) |>
   dplyr::select(geo, time, Entries, error_squared)
 
@@ -172,7 +172,7 @@ average_error <- error_country_model |>
     MSRE = mean(error_squared)
   )
 
-ojs_define(data = recent_data_tourism, pred = past_submissions_tourism, errors_data = error_country_model, ave_errors_data = average_error)
+ojs_define(data = recent_data_electricity, pred = past_submissions_electricity, errors_data = error_country_model, ave_errors_data = average_error)
 ```
 
 ```{ojs}

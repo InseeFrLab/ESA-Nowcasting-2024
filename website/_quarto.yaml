@@ -40,44 +40,44 @@ website:
         href: methodology.qmd
       - text: "Data"
         href: data.qmd
-      - text: "PPI"
-        href: ppi.qmd
-      - text: "PVI"
-        href: pvi.qmd
-      - text: "TOURISM"
-        href: tourism.qmd
+      - text: "GAS"
+        href: gas.qmd
+      - text: "OIL"
+        href: oil.qmd
+      - text: "ELECTRICITY"
+        href: electricity.qmd
       - text: "Lessons Learned"
         href: lessons-learned.qmd
       - text: "Reproducibility"
         href: reproducibility.qmd
         
   sidebar:
-    - id: ppi
-      title: "PPI"
+    - id: gas
+      title: "GAS"
       style: "floating"
       collapse-level: 2
       align: left
       contents:
-        - href: ppi.qmd
-        - href: post-mortem-ppi.qmd
+        - href: gas.qmd
+        - href: post-mortem-gas.qmd
 
-    - id: pvi
-      title: "PVI"
+    - id: oil
+      title: "OIL"
       style: "floating"
       collapse-level: 2
       align: left
       contents:
-        - href: pvi.qmd
-        - href: post-mortem-pvi.qmd
+        - href: oil.qmd
+        - href: post-mortem-oil.qmd
 
-    - id: tourism
-      title: "TOURISM"
+    - id: electricity
+      title: "ELECTRICITY"
       style: "floating"
       collapse-level: 2
       align: left
       contents:
-        - href: tourism.qmd
-        - href: post-mortem-tourism.qmd
+        - href: electricity.qmd
+        - href: post-mortem-electricity.qmd
 
 bibliography: biblio.bib 
 

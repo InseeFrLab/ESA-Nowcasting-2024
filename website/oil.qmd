@@ -1,15 +1,15 @@
 ---
-title: Number of nights spent at tourist accommodation establishments challenge
+title: Production volume in industry challenge
 ---
 
 ```{ojs}
-challenge = "TOURISM"
+challenge = "OIL"
 ```
 
-Accommodation statistics are a key part of the system of tourism statistics in the EU and have a long history of data collection.
-For this indicator, the benchmark will be the official figures on nights spent at tourist accommodation establishments by residents and non-residents.
-
-A night spent is each night a guest/tourist (resident or non-resident) actually spends (sleeps or stays) or is registered (his/her physical presence there being unnecessary) in a tourist accommodation establishment.
+The monthly PVI indicator represents the production index in industry.
+The objective of the index is to measure changes in the volume of output at monthly intervals.
+It provides a measure of the volume trend in value added over a given reference period.
+The production index is calculated in the form of a Laspeyres type index.
 
 ## Next forecast for a given country
 
@@ -23,11 +23,11 @@ viewof country = Inputs.select(Object.values(country_map), {
 
 ```{ojs}
 //| panel: center
+
 Plot.plot({
   grid: true,
   y: {
-    label: "↑ Number of nights spent at tourist accommodation establishments",
-    transform: d => d / 1e6
+    label: "↑ Production volume in industry",
   },  
   x: {
       label: "Year",
@@ -40,10 +40,10 @@ Plot.plot({
         y: "values", 
         stroke: "black",
         title: (d) =>
-                `${d.date.toLocaleString("en-UK", {
-                  month: "long",
-                  year: "numeric"
-                })}\n ${d.values / 1e6} millions `
+              `${d.date.toLocaleString("en-UK", {
+                month: "long",
+                year: "numeric"
+              })}\n ${d.values} `
         }),
     Plot.dot(predictions, {
         tip: true,
@@ -54,7 +54,7 @@ Plot.plot({
                 `${d.model}\n ${d.date.toLocaleString("en-UK", {
                   month: "long",
                   year: "numeric"
-                })} : ${d.values / 1e6} millions `
+                })} : ${d.values} `
         })
   ],
   color: {legend: true}
@@ -111,12 +111,12 @@ viewof rows = Inputs.table(summary_table,{
 #| cache: false
 
 data <- targets::tar_read(data, store = "store_data")
-targets::tar_load(predictions_tourism, store = "store_tourism")
+targets::tar_load(predictions_oil, store = "store_oil")
 
-sample <- data$TOURISM$data |>
-  dplyr::filter((nace_r2 %in% "I551-I553"))
+sample <- data$OIL$data |>
+  dplyr::filter((nace_r2 %in% "B-D"))
 
-ojs_define(data = sample, pred = predictions_tourism)
+ojs_define(data = sample, pred = predictions_oil)
 ```
 
 ```{ojs}

@@ -1,15 +1,16 @@
 ---
-title: Production volume in industry challenge
+title: Producer prices in industry challenge
 ---
 
 ```{ojs}
-challenge = "PVI"
+challenge = "GAS"
 ```
 
-The monthly PVI indicator represents the production index in industry.
-The objective of the index is to measure changes in the volume of output at monthly intervals.
-It provides a measure of the volume trend in value added over a given reference period.
-The production index is calculated in the form of a Laspeyres type index.
+Producer prices are also known as output prices and the objective of the output price index is to measure the monthly development of transaction prices of economic activities.
+
+There is a general public interest in knowing the extent to which the prices of goods and services have risen. Also, it has long been customary in many countries to adjust levels of wages, pensions, and payments in long term contracts in proportion to changes in relevant prices.
+
+The domestic output price index for an economic activity measures the average price development of all goods and related services resulting from that activity and sold on the domestic market between one time period and another.
 
 ## Next forecast for a given country
 
@@ -27,7 +28,7 @@ viewof country = Inputs.select(Object.values(country_map), {
 Plot.plot({
   grid: true,
   y: {
-    label: "↑ Production volume in industry",
+    label: "↑ Production price in industry",
   },  
   x: {
       label: "Year",
@@ -43,7 +44,7 @@ Plot.plot({
               `${d.date.toLocaleString("en-UK", {
                 month: "long",
                 year: "numeric"
-              })}\n ${d.values} `
+              })}\n${d.values}`
         }),
     Plot.dot(predictions, {
         tip: true,
@@ -111,12 +112,12 @@ viewof rows = Inputs.table(summary_table,{
 #| cache: false
 
 data <- targets::tar_read(data, store = "store_data")
-targets::tar_load(predictions_pvi, store = "store_pvi")
+targets::tar_load(predictions_gas, store = "store_gas")
 
-sample <- data$PVI$data |>
-  dplyr::filter((nace_r2 %in% "B-D"))
+sample <- data$GAS$data |>
+  dplyr::filter((nace_r2 %in% "B-E36"))
 
-ojs_define(data = sample, pred = predictions_pvi)
+ojs_define(data = sample, pred = predictions_gas)
 ```
 
 ```{ojs}

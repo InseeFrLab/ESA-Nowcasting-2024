@@ -1,5 +1,5 @@
 ```{ojs}
-challenge = "PPI"
+challenge = "GAS"
 ```
 
 # Post-mortem analysis of our forecasts per country
@@ -145,16 +145,16 @@ viewof doweighted = Inputs.toggle({label: "Weighted mean", value: false})
 ```{r}
 #| cache: false
 
-targets::tar_load(past_submissions_ppi, store = "store_post_mortem")
-targets::tar_load(recent_data_ppi, store = "store_post_mortem")
+targets::tar_load(past_submissions_gas, store = "store_post_mortem")
+targets::tar_load(recent_data_gas, store = "store_post_mortem")
 
-past_submissions_ppi <- past_submissions_ppi |>
+past_submissions_gas <- past_submissions_gas |>
   dplyr::filter(Entries %in% c("REGARIMA", "XGBOOST", "DFM", "ETS", "LSTM"))
 
-error_country_model <- past_submissions_ppi |>
+error_country_model <- past_submissions_gas |>
   tibble::tibble() |>
   dplyr::rename(geo = Country, time = Date, forecast = value) |>
-  dplyr::inner_join(recent_data_ppi, by = c("geo", "time")) |>
+  dplyr::inner_join(recent_data_gas, by = c("geo", "time")) |>
   dplyr::mutate(error_squared = (forecast - values)^2 / values) |>
   tidyr::drop_na(error_squared) |>
   dplyr::select(geo, time, Entries, error_squared)
@@ -166,7 +166,7 @@ average_error <- error_country_model |>
     MSRE = mean(error_squared)
   )
 
-ojs_define(data = recent_data_ppi, pred = past_submissions_ppi, errors_data = error_country_model, ave_errors_data = average_error)
+ojs_define(data = recent_data_gas, pred = past_submissions_gas, errors_data = error_country_model, ave_errors_data = average_error)
 ```
 
 ```{ojs}

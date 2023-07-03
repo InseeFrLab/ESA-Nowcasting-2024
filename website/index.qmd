@@ -9,11 +9,11 @@ In the area of nowcasting, the European Statistics Awards Programme aims to disc
 Better timeliness is a recurring demand for official statistics so there are obvious benefits to developing new approaches which obtain more accurate estimates within a shorter interval.
 Even where a satisfactorily accurate point estimate is already available, alternative methodologies carry significant potential secondary benefits like reduced cost, improved robustness and applicability in cases where a developed statistical system is still not established.
 
-The 2022 round of the Nowcasting awards is divided into 3 separate competitions, each focusing on the nowcasting of one economic indicator:
+The 2023 round of the Nowcasting awards is divided into 3 separate competitions, each focusing on the nowcasting of one economic indicator:
 
-- **PPI**: Producer prices in industry (domestic market)
-- **PVI**: Production volume in industry
-- **TOURISM**: Number of nights spent at tourist accommodation establishments
+- **GAS**: Inland gas consumption
+- **OIL**: Oil and petroleum product deliveries
+- **ELECTRICITY**: Electricity availability
 
 ## Our team {.unnumbered}
 

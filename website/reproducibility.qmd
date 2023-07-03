@@ -60,9 +60,9 @@ The project is deeply relying on the [target package](https://books.ropensci.org
 The project is decomposed into four different pipelines specified in the targets_yaml file:
 
     - data: `run_data.R`
-    - ppi: `run_ppi.R`
-    - pvi: `run_pvi.R`
-    - tourism: `run_tourism.R`
+    - gas: `run_gas.R`
+    - oil: `run_oil.R`
+    - electricity: `run_electricity.R`
 
 The first pipeline retrieves all the data necessary for the different challenges, while the other three run the five models for each challenge independently. Each pipeline can be run using the following command: `targets::tar_make(script = "run_***.R")`.
 

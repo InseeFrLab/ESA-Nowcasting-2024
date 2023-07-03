@@ -1,16 +1,15 @@
 ---
-title: Producer prices in industry challenge
+title: Number of nights spent at tourist accommodation establishments challenge
 ---
 
 ```{ojs}
-challenge = "PPI"
+challenge = "ELECTRICITY"
 ```
 
-Producer prices are also known as output prices and the objective of the output price index is to measure the monthly development of transaction prices of economic activities.
+Accommodation statistics are a key part of the system of tourism statistics in the EU and have a long history of data collection.
+For this indicator, the benchmark will be the official figures on nights spent at tourist accommodation establishments by residents and non-residents.
 
-There is a general public interest in knowing the extent to which the prices of goods and services have risen. Also, it has long been customary in many countries to adjust levels of wages, pensions, and payments in long term contracts in proportion to changes in relevant prices.
-
-The domestic output price index for an economic activity measures the average price development of all goods and related services resulting from that activity and sold on the domestic market between one time period and another.
+A night spent is each night a guest/tourist (resident or non-resident) actually spends (sleeps or stays) or is registered (his/her physical presence there being unnecessary) in a tourist accommodation establishment.
 
 ## Next forecast for a given country
 
@@ -24,11 +23,11 @@ viewof country = Inputs.select(Object.values(country_map), {
 
 ```{ojs}
 //| panel: center
-
 Plot.plot({
   grid: true,
   y: {
-    label: "↑ Production price in industry",
+    label: "↑ Number of nights spent at tourist accommodation establishments",
+    transform: d => d / 1e6
   },  
   x: {
       label: "Year",
@@ -41,10 +40,10 @@ Plot.plot({
         y: "values", 
         stroke: "black",
         title: (d) =>
-              `${d.date.toLocaleString("en-UK", {
-                month: "long",
-                year: "numeric"
-              })}\n${d.values}`
+                `${d.date.toLocaleString("en-UK", {
+                  month: "long",
+                  year: "numeric"
+                })}\n ${d.values / 1e6} millions `
         }),
     Plot.dot(predictions, {
         tip: true,
@@ -55,7 +54,7 @@ Plot.plot({
                 `${d.model}\n ${d.date.toLocaleString("en-UK", {
                   month: "long",
                   year: "numeric"
-                })} : ${d.values} `
+                })} : ${d.values / 1e6} millions `
         })
   ],
   color: {legend: true}
@@ -112,12 +111,12 @@ viewof rows = Inputs.table(summary_table,{
 #| cache: false
 
 data <- targets::tar_read(data, store = "store_data")
-targets::tar_load(predictions_ppi, store = "store_ppi")
+targets::tar_load(predictions_electricity, store = "store_electricity")
 
-sample <- data$PPI$data |>
-  dplyr::filter((nace_r2 %in% "B-E36"))
+sample <- data$ELECTRICITY$data |>
+  dplyr::filter((nace_r2 %in% "I551-I553"))
 
-ojs_define(data = sample, pred = predictions_ppi)
+ojs_define(data = sample, pred = predictions_electricity)
 ```
 
 ```{ojs}

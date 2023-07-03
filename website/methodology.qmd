@@ -3,7 +3,7 @@ title: Methodology
 ---
 
 
-Our team employed a comprehensive methodology utilizing both standard econometric models and machine learning type models to accurately nowcast the target variables. Specifically, we utilized a combination of three econometric models, including RegArima, Exponential Smoothing (ETS), and Dynamic Factor Models (DFM), as well as two machine learning models, XGBoost and Long Short-Term Memory (LSTM) models, to ensure robust and accurate forecasting. While we applied the same five model classes across all three challenges, including PPI, PVI, and Tourism, we tailored the specific datasets and parameters to each challenge to optimize model performance. This approach allowed us to leverage the strengths of both traditional econometric models and cutting-edge ML techniques to achieve the best possible forecasting results.
+Our team employed a comprehensive methodology utilizing both standard econometric models and machine learning type models to accurately nowcast the target variables. Specifically, we utilized a combination of three econometric models, including RegArima, Exponential Smoothing (ETS), and Dynamic Factor Models (DFM), as well as two machine learning models, XGBoost and Long Short-Term Memory (LSTM) models, to ensure robust and accurate forecasting. While we applied the same five model classes across all three challenges, including GAS, OIL, and ELECTRICITY, we tailored the specific datasets and parameters to each challenge to optimize model performance. This approach allowed us to leverage the strengths of both traditional econometric models and cutting-edge ML techniques to achieve the best possible forecasting results.
 
 
 ## Regarima
@@ -39,9 +39,9 @@ procedure.
 
 The final nowcast value is provided by the projection of the model at horizon 1, 2 or 3, depending on the challenge and the position in the month.
 
-### Seasonal adjustment for tourism
+### Seasonal adjustment for electricity
 
-For tourism, the seasonal component is very strong and may not be the same as the explanatory variables. An X13 pre-treatment is applied to seasonnally adjust and correct for trading days the target variable (Number of nights spent at tourist accommodation establishments) and the potential explanatory variables. This treatment also provides a prediction for the seasonal coefficient of the nowcasted month.
+For electricity, the seasonal component is very strong and may not be the same as the explanatory variables. An X13 pre-treatment is applied to seasonnally adjust and correct for trading days the target variable (Number of nights spent at tourist accommodation establishments) and the potential explanatory variables. This treatment also provides a prediction for the seasonal coefficient of the nowcasted month.
 
 Next, seasonally adjusted variables are put in the REGARIMA model. The final step involves nowcasting the "raw value" by dividing the SA forecast by the projected seasonal coefficient.
 
@@ -96,7 +96,7 @@ We also pay attention to the availability of the data to ensure that each observ
 
 To determine the optimal values for the number of lags and factors in our DFM models, we use the @bai2002determining criteria, which provides statistical guidelines for selecting these parameters. We set a maximum limit of 4 lags and 2 factors for computational efficiency reasons.
 
-We initiate the estimation process from February 2005 for all challenges, and for the TOURISM challenge, we performed a seasonal adjustment on the target series prior to estimation in order to account for any seasonal patterns in the data.
+We initiate the estimation process from February 2005 for all challenges, and for the ELECTRICITY challenge, we performed a seasonal adjustment on the target series prior to estimation in order to account for any seasonal patterns in the data.
 
 ### Nowcasting
 
@@ -116,7 +116,7 @@ The exponential smoothing models used are a combination of three components:
 2. A trend: additive ($A$), multiplicative ($M$), damped ($A_d$ or $M_d$) or absent ($N$).
 
 3. A seasonality: additive ($A$), multiplicative $M$ or absent ($N$).
-The seasonal component is only used with tourism data.
+The seasonal component is only used with electricity data.
 
 See @fig-ets for the description of the model.
 
