@@ -1,5 +1,5 @@
 ---
-title: Number of nights spent at tourist accommodation establishments challenge
+title: European electricity availability challenge 
 ---
 
 ```{ojs}
@@ -27,7 +27,6 @@ Plot.plot({
   grid: true,
   y: {
     label: "↑ Number of nights spent at tourist accommodation establishments",
-    transform: d => d / 1e6
   },  
   x: {
       label: "Year",
@@ -43,7 +42,7 @@ Plot.plot({
                 `${d.date.toLocaleString("en-UK", {
                   month: "long",
                   year: "numeric"
-                })}\n ${d.values / 1e6} millions `
+                })}\n ${d.values}`
         }),
     Plot.dot(predictions, {
         tip: true,
@@ -54,7 +53,7 @@ Plot.plot({
                 `${d.model}\n ${d.date.toLocaleString("en-UK", {
                   month: "long",
                   year: "numeric"
-                })} : ${d.values / 1e6} millions `
+                })} : ${d.values}`
         })
   ],
   color: {legend: true}
@@ -114,7 +113,7 @@ data <- targets::tar_read(data, store = "store_data")
 targets::tar_load(predictions_electricity, store = "store_electricity")
 
 sample <- data$ELECTRICITY$data |>
-  dplyr::filter((nace_r2 %in% "I551-I553"))
+  dplyr::filter((siec %in% "E7000"))
 
 ojs_define(data = sample, pred = predictions_electricity)
 ```

@@ -1,5 +1,5 @@
 ---
-title: Producer prices in industry challenge
+title: European inland gas consumption challenge
 ---
 
 ```{ojs}
@@ -115,7 +115,7 @@ data <- targets::tar_read(data, store = "store_data")
 targets::tar_load(predictions_gas, store = "store_gas")
 
 sample <- data$GAS$data |>
-  dplyr::filter((nace_r2 %in% "B-E36"))
+  dplyr::filter((siec %in% "G3000"))
 
 ojs_define(data = sample, pred = predictions_gas)
 ```

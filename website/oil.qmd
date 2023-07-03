@@ -1,5 +1,5 @@
 ---
-title: Production volume in industry challenge
+title: European oil and petroleum product deliveries challenge
 ---
 
 ```{ojs}
@@ -114,7 +114,7 @@ data <- targets::tar_read(data, store = "store_data")
 targets::tar_load(predictions_oil, store = "store_oil")
 
 sample <- data$OIL$data |>
-  dplyr::filter((nace_r2 %in% "B-D"))
+  dplyr::filter((siec %in% "O4671"))
 
 ojs_define(data = sample, pred = predictions_oil)
 ```
