@@ -30,7 +30,7 @@ Our team is composed of 5 members:
 
 This work is licensed under the [European Union Public Licence 1.2](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12).
 
-See the code on [Github](https://github.com/InseeFrLab/ESA-Nowcasting-2023/).
+See the code on [Github](https://github.com/InseeFrLab/ESA-Nowcasting-2024/).
 
 ## Acknowledgements {.unnumbered}
 

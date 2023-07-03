@@ -6,9 +6,9 @@ website:
   favicon: "images/logo-ESA.png"
   title: "European Statistics Awards for Nowcasting"
   description: "Website of the INSEE team competing for the European Statistics Awards for Nowcasting, results and methods are freely-available and open-source."
-  site-url: "https://inseefrlab.github.io/ESA-Nowcasting-2023/"
+  site-url: "https://inseefrlab.github.io/ESA-Nowcasting-2024/"
   
-  repo-url: "https://github.com/InseeFrLab/ESA-Nowcasting-2023"
+  repo-url: "https://github.com/InseeFrLab/ESA-Nowcasting-2024"
   repo-actions: [edit, issue]
 
   open-graph: true
@@ -30,7 +30,7 @@ website:
  
     right:
       - icon: github
-        href: "https://github.com/InseeFrLab/ESA-Nowcasting-2023"
+        href: "https://github.com/InseeFrLab/ESA-Nowcasting-2024"
         aria-label: GitHub
 
     left:
