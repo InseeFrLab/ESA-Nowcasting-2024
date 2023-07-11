@@ -223,6 +223,34 @@ BRENT:
     - XGBOOST
     - LSTM
   id: "BZ=F"
+  
+OIL_FUTURE:
+  name: "Crude Oil Futures Price"
+  short_name: "OIL_FUTURE"
+  source: Yahoo
+  challenge: 
+    - GAS
+    - OIL
+    - ELECTRICITY
+  model:
+    - DFM
+    - XGBOOST
+    - LSTM
+  id: "CL=F"
+
+GAS_FUTURE:
+  name: "Natural Gas Futures Price"
+  short_name: "GAS_FUTURE"
+  source: Yahoo
+  challenge: 
+    - GAS
+    - OIL
+    - ELECTRICITY
+  model:
+    - DFM
+    - XGBOOST
+    - LSTM
+  id: "NG=F"
 
 EUR_USD:
   name: "EUR to USD Exchange Rate"
