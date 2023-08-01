@@ -1,7 +1,7 @@
 # Repository of the Insee team competing for the [European Statistics Awards for Nowcasting](https://statistics-awards.eu/) 2024
 
 [![Licence](https://img.shields.io/badge/Licence-EUPL--1.2-001489)](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12)
-[![Onyxia](https://img.shields.io/badge/Launch-Datalab-orange?logo=R)](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&init.personalInit=%C2%ABhttps%3A%2F%2Fminio.lab.sspcloud.fr%2Fprojet-esa-nowcasting%2Finit.sh%C2%BB&git.cache=%C2%AB9999%C2%BB&git.repository=%C2%ABhttps%3A%2F%2Fgithub.com%2FInseeFrLab%2FESA-Nowcasting-2024.git%C2%BB&service.image.custom.enabled=true&service.image.pullPolicy=%C2%ABAlways%C2%BB&service.image.custom.version=%C2%ABthomasfaria%2Fesa-nowcasting-2024%3Av0.0.1%C2%BB)
+[![Onyxia](https://img.shields.io/badge/Launch-Datalab-orange?logo=R)](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&init.personalInit=%C2%ABhttps%3A%2F%2Fminio.lab.sspcloud.fr%2Fprojet-esa-nowcasting%2Finit.sh%C2%BB&git.cache=%C2%AB9999%C2%BB&git.repository=%C2%ABhttps%3A%2F%2Fgithub.com%2FInseeFrLab%2FESA-Nowcasting-2024.git%C2%BB&service.image.custom.enabled=true&service.image.pullPolicy=%C2%ABAlways%C2%BB&service.image.custom.version=%C2%ABthomasfaria%2Fesa-nowcasting-2024%3Av1.0.0%C2%BB)
 [![Run ESA Challenge](https://github.com/InseeFrLab/ESA-Nowcasting-2024/actions/workflows/workflow-esa-challenge.yaml/badge.svg)](https://github.com/InseeFrLab/ESA-Nowcasting-2024/actions/workflows/workflow-esa-challenge.yaml)
 
 ## Getting Started
@@ -9,7 +9,7 @@
 To ensure full reproducibility of the results, the project is accompanied by a [Docker image](https://hub.docker.com/r/inseefrlab/esa-nowcasting-2024) that contains all the necessary packages and dependencies. You can pull the Docker image using the following command in your terminal:
 
 ```
-docker pull thomasfaria/esa-nowcasting-2024:v0.0.1
+docker pull thomasfaria/esa-nowcasting-2024:v1.0.0
 ```
 
 Alternatively, you can use the [Onyxia instance SSPCloud](https://github.com/InseeFrLab/onyxia-web), a datalab developed by the French National Institute of Statistics and Economic Studies ([INSEE](https://www.insee.fr/fr/accueil)) that provides an easy-to-use interface for running the Docker image.
@@ -17,7 +17,7 @@ Alternatively, you can use the [Onyxia instance SSPCloud](https://github.com/Ins
 To get started with SSPCloud:
 
 - Step 0: Go to [https://datalab.sspcloud.fr/home](https://datalab.sspcloud.fr/home). Click on **Sign In** and then **Create an account** with your academic or institutional email address.
-- Step 1: Click [here](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&init.personalInit=%C2%ABhttps%3A%2F%2Fminio.lab.sspcloud.fr%2Fprojet-esa-nowcasting%2Finit.sh%C2%BB&git.cache=%C2%AB9999%C2%BB&git.repository=%C2%ABhttps%3A%2F%2Fgithub.com%2FInseeFrLab%2FESA-Nowcasting-2024.git%C2%BB) or on the orange badge on top of the page.
+- Step 1: Click [here](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&init.personalInit=%C2%ABhttps%3A%2F%2Fminio.lab.sspcloud.fr%2Fprojet-esa-nowcasting%2Finit.sh%C2%BB&git.cache=%C2%AB9999%C2%BB&git.repository=%C2%ABhttps%3A%2F%2Fgithub.com%2FInseeFrLab%2FESA-Nowcasting-2024.git%C2%BB&service.image.custom.enabled=true&service.image.pullPolicy=%C2%ABAlways%C2%BB&service.image.custom.version=%C2%ABthomasfaria%2Fesa-nowcasting-2024%3Av1.0.0%C2%BB) or on the orange badge on top of the page.
 - Step 2: **Open** the service and follow the instructions regarding *username* and *credentials*.
 - Step 3: **Open a new project** by clicking the following file: `~/work/ESA-Nowcasting-2024/ESA-Nowcasting-2024.Rproj`.
 - Step 4: Ensure all necessary packages are installed by executing the ```renv::restore()``` command in the console. If prompted to proceed with the installation, enter `y`.
