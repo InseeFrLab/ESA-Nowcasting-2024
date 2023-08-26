@@ -72,9 +72,11 @@ build_data_lstm_one_country <- function(large_data,
   df <- df[!is.na(cols_with_diversity) & cols_with_diversity]
 
   # Actually add one row for the prediction
-  df <- df |>
-    add_row(time = ymd(config_env$DATES$date_to_pred)) |>
-    rename(date = time)
+  if (!ymd(config_env$DATES$date_to_pred) %in% df$time) {
+    df <- df |>
+      add_row(time = ymd(config_env$DATES$date_to_pred)) |>
+      rename(date = time)
+  }
 
   #########################################
   # Return result
