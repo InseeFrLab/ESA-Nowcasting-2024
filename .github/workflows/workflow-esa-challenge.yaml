@@ -82,8 +82,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name Thomas Faria
-          git config user.email 57811152+ThomasFaria@users.noreply.github.com
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           
       - name: Merge recent changes from main branch
         run: | 
@@ -161,8 +161,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name Thomas Faria
-          git config user.email 57811152+ThomasFaria@users.noreply.github.com
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           
       - name: Merge recent changes from main branch
         run: | 
@@ -240,8 +240,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name Thomas Faria
-          git config user.email 57811152+ThomasFaria@users.noreply.github.com
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           
       - name: Merge recent changes from main branch
         run: | 
