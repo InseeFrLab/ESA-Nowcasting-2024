@@ -74,10 +74,11 @@ build_data_lstm_one_country <- function(large_data,
   # Actually add one row for the prediction
   if (!ymd(config_env$DATES$date_to_pred) %in% df$time) {
     df <- df |>
-      add_row(time = ymd(config_env$DATES$date_to_pred)) |>
-      rename(date = time)
+      add_row(time = ymd(config_env$DATES$date_to_pred))
   }
 
+  df <- df |>
+    rename(date = time)
   #########################################
   # Return result
   #########################################
