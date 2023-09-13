@@ -326,7 +326,7 @@ get_data_from_destatis <- function(data_info) {
 
 # Utils
 
-# TODO : Egalement incorporer les jours fériés avec la fonction holidays du package lares
+# TODO : Egalement incorporer les jours fériés
 # Attention, ça deviendra donc par pays, il faudra modifier data_preprocessing.R
 # Attention aussi à ne pas compter les jours de week-end deux fois
 get_weekend_days <- function(data_info, challenges_info) {
@@ -334,11 +334,13 @@ get_weekend_days <- function(data_info, challenges_info) {
   subset_lists <- Filter(function(x) x$source == "Weekend", data_info)
   
   data <- lapply(subset_lists, function(x) {
+    # countries <- challenges_info$COUNTRIES
     dates <- seq(as.Date(lubridate::ymd(x["init_date"])), date_to_pred + months(1), by = "month")
     nb_weekend_days <- dplyr::tibble(
       month = lubridate::month(dates), year = lubridate::year(dates),
       weekends = numeric(length(dates))
     )
+    # for (k in 1:length(countries)) {
     for (i in 1:length(dates)) {
       month_start <- as.Date(paste(
         nb_weekend_days$year[i], nb_weekend_days$month[i], 1,
@@ -353,7 +355,7 @@ get_weekend_days <- function(data_info, challenges_info) {
         lubridate::wday(seq(month_start, month_end, by = "day")) %in% c(7, 1)
       )
     }
-    
+
     return(nb_weekend_days)
   })
   return(data)
