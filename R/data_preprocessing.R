@@ -366,12 +366,13 @@ build_data_ml <- function(data, config_models, config_env, challenge, model) {
       by = c("geo", "time")
     )
   
-  ### F) Add weekends data
+  ### F) Add time-related data (weekends, holiday, quarter)
   
   df <- df |>
-    left_join(selected_data$NB_WE$data,
+    left_join(data.frame(selected_data$NB_WE$data),
               by = c("month", "year")
-    )
+    ) |>
+    mutate(quarter = month %% 3)
 
   ### G) Delete dummy columns
 

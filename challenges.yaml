@@ -22,3 +22,32 @@ DATES :
   current_date : "2023-08-01"
   date_to_pred : "2023-09-01"
   month_to_pred : "september"
+
+COUNTRIES:
+  AT: Austria
+  BE: Belgium
+  BG: Bulgaria
+  CY: Cyprus
+  CZ: Czech Republic
+  DE: Germany
+  DK: Denmark
+  EE: Estonia
+  EL: Greece
+  ES: Spain
+  FI: Finland
+  FR: France
+  HR: Croatia
+  HU: Hungary
+  IE: Ireland
+  IT: Italy
+  LT: Lithuania
+  LU: Luxembourg
+  LV: Latvia
+  MT: Malta
+  NL: Netherlands
+  PL: Poland
+  PT: Portugal
+  RO: Romania
+  SE: Sweden
+  SI: Slovenia
+  SK: Slovakia
