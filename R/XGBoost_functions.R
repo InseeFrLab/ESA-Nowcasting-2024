@@ -20,7 +20,7 @@ options(dplyr.summarise.inform = FALSE)
 
 build_data_xgboost_europe <- function(large_data = build_data_ml(model = "XGBOOST"),
                                       config_env = yaml::read_yaml("challenges.yaml"),
-                                      categorical_variables = c("geo", "month", "year")) {
+                                      categorical_variables = c("geo", "month", "year", "quarter")) {
   df <- data.frame(large_data)
 
   #########################################
@@ -61,7 +61,7 @@ build_data_xgboost_europe <- function(large_data = build_data_ml(model = "XGBOOS
 
 build_data_xgboost_one_country <- function(large_data = build_data_ml(model = "XGBOOST"),
                                            config_env = yaml::read_yaml("challenges.yaml"),
-                                           categorical_variables = c("month", "year"),
+                                           categorical_variables = c("month", "year", "quarter"),
                                            country = "FR") {
   df <- data.frame(large_data)
 
@@ -403,7 +403,7 @@ train_pred_xgboost_per_country <- function(large_data,
                                            config_models,
                                            config_env,
                                            challenge,
-                                           categorical_variables = c("month", "year")) {
+                                           categorical_variables = c("month", "year", "quarter")) {
   challenge_to_predict <- paste(challenge, "to_predict", sep = "_")
   challenge_pred_residuals <- paste(challenge, "pred", "residuals", sep = "_")
 
@@ -489,7 +489,7 @@ run_grid_search_xgboost <- function(data,
                                     challenge,
                                     per_country,
                                     country,
-                                    categorical_variables = c("geo", "month", "year")) {
+                                    categorical_variables = c("geo", "month", "year", "quarter")) {
   large_data <- build_data_ml(
     data = data,
     config_models = config_models,
@@ -525,7 +525,7 @@ run_xgboost_europe <- function(data,
                                config_models,
                                config_env,
                                challenge,
-                               categorical_variables = c("geo", "month", "year")) {
+                               categorical_variables = c("geo", "month", "year", "quarter")) {
   large_data <- build_data_ml(
     data = data,
     config_models = config_models,
@@ -553,7 +553,7 @@ run_xgboost_per_country <- function(data,
                                     config_models,
                                     config_env,
                                     challenge,
-                                    categorical_variables = c("month", "year")) {
+                                    categorical_variables = c("month", "year", "quarter")) {
   large_data <- build_data_ml(
     data = data,
     config_models = config_models,

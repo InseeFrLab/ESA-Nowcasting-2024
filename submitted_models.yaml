@@ -1,5 +1,5 @@
 PAST_MONTHS:
-  ['june', 'july']
+  ['june', 'july', 'august']
   
 START_DATE: "2023-01-01"
 
@@ -17,6 +17,12 @@ GAS:
     entry_4: XGBOOST
     entry_5: LSTM
   august:
+    entry_1: REGARIMA
+    entry_2: DFM
+    entry_3: ETS
+    entry_4: XGBOOST
+    entry_5: LSTM
+  september:
     entry_1: REGARIMA
     entry_2: DFM
     entry_3: ETS
@@ -41,6 +47,12 @@ OIL:
     entry_3: ETS
     entry_4: XGBOOST
     entry_5: LSTM
+  september:
+    entry_1: REGARIMA
+    entry_2: DFM
+    entry_3: ETS
+    entry_4: XGBOOST
+    entry_5: LSTM
 ELECTRICITY:
   june:
     entry_1: REGARIMA
@@ -60,3 +72,10 @@ ELECTRICITY:
     entry_3: ETS
     entry_4: XGBOOST
     entry_5: LSTM
+  september:
+    entry_1: REGARIMA
+    entry_2: DFM
+    entry_3: ETS
+    entry_4: XGBOOST
+    entry_5: LSTM
+

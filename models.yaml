@@ -112,9 +112,9 @@ ETS:
 # Entry 4
 XGBOOST:
   GAS:
-    nb_months_past_to_use : 10
-    nb_months_past_to_use_others : 5
-    nb_years_past_to_use : 5
+    nb_months_past_to_use : 6
+    nb_months_past_to_use_others : 3
+    nb_years_past_to_use : 3
     hyperparameters_europe :
       best_nround : 150
       best_eta : 0.15
@@ -128,9 +128,9 @@ XGBOOST:
       best_subsample : 0.5
       best_colsample_bytree : 0.5
   OIL:
-    nb_months_past_to_use : 10
-    nb_months_past_to_use_others : 5
-    nb_years_past_to_use : 5
+    nb_months_past_to_use : 6
+    nb_months_past_to_use_others : 3
+    nb_years_past_to_use : 3
     hyperparameters_europe :
       best_nround : 150
       best_eta : 0.15
@@ -144,9 +144,9 @@ XGBOOST:
       best_subsample : 0.5
       best_colsample_bytree : 0.5
   ELECTRICITY:
-    nb_months_past_to_use : 10
-    nb_months_past_to_use_others : 5
-    nb_years_past_to_use : 5
+    nb_months_past_to_use : 6
+    nb_months_past_to_use_others : 3
+    nb_years_past_to_use : 3
     hyperparameters_europe :
       best_nround : 150
       best_eta : 0.15
