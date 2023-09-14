@@ -386,7 +386,7 @@ ELEC_PRICES:
 NB_WE:
   name: "Number of weekend days"
   short_name: "NB_WE"
-  source: Weekend
+  source: weekend
   challenge: 
     - GAS
     - OIL
