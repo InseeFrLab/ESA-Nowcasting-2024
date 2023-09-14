@@ -75,14 +75,29 @@ list(
     command = run_ETS(challenge, challenges, data, models)
   ),
   tar_target(
+    name = large_data_xgboost_oil,
+    command = build_data_ml(
+      data, config_models, config_env, challenge, "XGBOOST"
+    )
+  ),
+  tar_target(
     name = xgboost_oil,  # Entry 4
-    command = run_xgboost_per_country(
-      data = data,
+    command = train_pred_xgboost_per_country(
+      data = large_data_xgboost_oil,
       config_models = models,
       config_env = challenges,
       challenge = challenge
     )
   ),
+  # tar_target(
+  #   name = xgboost_oil,  # Entry 4
+  #   command = run_xgboost_per_country(
+  #     data = data,
+  #     config_models = models,
+  #     config_env = challenges,
+  #     challenge = challenge
+  #   )
+  # ),
   tar_target(
     name = lstm_oil,  # Entry 5
     command = run_lstm_per_country(

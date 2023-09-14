@@ -566,7 +566,7 @@ run_xgboost_per_country <- function(data,
     large_data = large_data,
     config_models = config_models,
     config_env = config_env,
-    categorical_variables = categorical_variables,
-    challenge = challenge
+    challenge = challenge,
+    categorical_variables = categorical_variables
   ))
 }
