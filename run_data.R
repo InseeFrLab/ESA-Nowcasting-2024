@@ -68,8 +68,13 @@ list(
     command = get_data_from_destatis(data_info),
   ),
   tar_target(
+    name = weekend,
+    command = get_weekend_days(data_info, challenges),
+  ),
+  tar_target(
     name = data,
-    command = get_data(data_info, c(eurostat, yahoo, gtrends, ember, destatis))
+    command = get_data(
+      data_info, c(eurostat, yahoo, gtrends, ember, destatis, weekend))
   ),
   tar_target(
     name = data_saved,
