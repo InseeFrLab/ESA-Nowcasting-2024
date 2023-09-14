@@ -87,6 +87,25 @@ save_data <- function(data, challenges_info, save_s3) {
   paste0("2024/data/", month)
 }
 
+save_large_data <- function(large_data, challenges_info, challenge) {
+  month <- challenges_info$DATES$month_to_pred
+  
+  if (!dir.exists(paste0("2024/data/", month))) {
+    dir.create(paste0("2024/data/", month))
+  }
+  
+  filename <- paste0(
+    "2024/data/", month, "/", "large_data_", challenge, ".parquet"
+  )
+  arrow::write_parquet(large_data, filename)
+  aws.s3::put_object(
+    file = filename,
+    bucket = "projet-esa-nowcasting", object = filename,
+    region = ""
+  )
+
+  paste0("2024/data/", month)
+}
 
 put_dir_s3 <- function(local_dir, s3_dir, bucket) {
   # Get a list of files in the local folder

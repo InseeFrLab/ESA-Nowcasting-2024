@@ -90,6 +90,13 @@ list(
       challenge = challenge
     )
   ),
+  tar_target(
+    name = large_data_electricity_saved,
+    command = save_large_data(
+      large_data_xgboost_electricity, challenges, challenge
+    ),
+    format = "file"
+  ),
   # tar_target(
   #   name = xgboost_electricity,  # Entry 4
   #   command = run_xgboost_per_country(
