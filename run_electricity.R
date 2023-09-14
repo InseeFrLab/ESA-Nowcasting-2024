@@ -78,7 +78,7 @@ list(
   tar_target(
     name = large_data_xgboost_electricity,
     command = build_data_ml(
-      data, config_models, config_env, challenge, "XGBOOST"
+      data, models, challenges, challenge, "XGBOOST"
     )
   ),
   tar_target(
