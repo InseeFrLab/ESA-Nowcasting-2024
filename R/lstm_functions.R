@@ -142,6 +142,8 @@ train_pred_lstm_one_country <- function(data_lstm,
     train_episodes = 50,
     python_model_name = "model"
   ) # default parameters with 12 timestep history
+  
+  print(mod$train_loss)
 
   #########################################
   # Predict

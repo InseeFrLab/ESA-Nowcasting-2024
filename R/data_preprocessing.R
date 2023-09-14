@@ -365,8 +365,16 @@ build_data_ml <- function(data, config_models, config_env, challenge, model) {
     left_join(format_gtrends_data(selected_data),
       by = c("geo", "time")
     )
+  
+  ### F) Add time-related data (weekends, holiday, quarter)
+  
+  df <- df |>
+    left_join(data.frame(selected_data$NB_WE$data),
+              by = c("month", "year")
+    ) |>
+    mutate(quarter = month %% 3)
 
-  ### F) Delete dummy columns
+  ### G) Delete dummy columns
 
   df <- df[colSums(!is.na(df)) > length(df) / (length(countries) + 1)]
 
@@ -378,7 +386,7 @@ build_data_ml <- function(data, config_models, config_env, challenge, model) {
     ) != 0
   )]
 
-  ### G) Return results
+  ### H) Return results
 
   return(df)
 }
