@@ -331,7 +331,7 @@ get_data_from_destatis <- function(data_info) {
 # Attention aussi à ne pas compter les jours de week-end deux fois
 get_weekend_days <- function(data_info, challenges_info) {
   date_to_pred <- lubridate::ymd(challenges_info$DATES$date_to_pred)
-  subset_lists <- Filter(function(x) x$source == "Weekend", data_info)
+  subset_lists <- Filter(function(x) x$source == "weekend", data_info)
   
   data <- lapply(subset_lists, function(x) {
     # countries <- challenges_info$COUNTRIES
