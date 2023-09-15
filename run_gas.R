@@ -83,7 +83,7 @@ list(
   tar_target(
     name = xgboost_gas,  # Entry 4
     command = train_pred_xgboost_per_country(
-      data = large_data_xgboost_gas,
+      large_data = large_data_xgboost_gas,
       config_models = models,
       config_env = challenges,
       challenge = challenge
