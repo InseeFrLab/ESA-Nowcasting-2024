@@ -343,6 +343,7 @@ get_weekend_days <- function(data_info, challenges_info) {
     )
 
     for (country in x$filters$geo) {
+      print(country)
       for (i in 1:length(dates)) {
         month_start <- as.Date(paste(
           year(dates[i]), month(dates[i]), 1,
