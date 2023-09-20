@@ -395,6 +395,10 @@ NB_WE:
     - XGBOOST
     - LSTM
   init_date: "2000-01-01"
+  filters:
+    geo:  ["AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI",
+    "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", 
+    "RO", "SE", "SI", "SK"]
 
 TOLL_DE:
   name: "Truck toll mileage index DE"

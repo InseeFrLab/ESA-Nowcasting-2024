@@ -370,7 +370,7 @@ build_data_ml <- function(data, config_models, config_env, challenge, model) {
   
   df <- df |>
     left_join(data.frame(selected_data$NB_WE$data),
-              by = c("month", "year")
+              by = c("geo", "month", "year")
     ) |>
     mutate(quarter = month %% 3)
 
