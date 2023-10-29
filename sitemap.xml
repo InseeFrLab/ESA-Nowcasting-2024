@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/post-mortem-gas.html</loc>
-    <lastmod>2023-10-09T12:12:15.567Z</lastmod>
-  </url>
-  <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/lessons-learned.html</loc>
-    <lastmod>2023-10-09T12:12:12.118Z</lastmod>
-  </url>
-  <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/reproducibility.html</loc>
-    <lastmod>2023-10-09T12:12:10.582Z</lastmod>
-  </url>
-  <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/data.html</loc>
-    <lastmod>2023-10-09T12:12:09.130Z</lastmod>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/electricity.html</loc>
+    <lastmod>2023-10-29T20:24:09.437Z</lastmod>
   </url>
   <url>
     <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/LICENCE.html</loc>
-    <lastmod>2023-10-09T12:12:05.530Z</lastmod>
+    <lastmod>2023-10-29T20:24:04.057Z</lastmod>
   </url>
   <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/oil.html</loc>
-    <lastmod>2023-10-09T12:12:01.846Z</lastmod>
-  </url>
-  <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/post-mortem-electricity.html</loc>
-    <lastmod>2023-10-09T12:11:55.798Z</lastmod>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/post-mortem-gas.html</loc>
+    <lastmod>2023-10-29T20:24:02.465Z</lastmod>
   </url>
   <url>
     <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/post-mortem-oil.html</loc>
-    <lastmod>2023-10-09T12:11:59.018Z</lastmod>
+    <lastmod>2023-10-29T20:23:57.929Z</lastmod>
   </url>
   <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/electricity.html</loc>
-    <lastmod>2023-10-09T12:12:04.658Z</lastmod>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/lessons-learned.html</loc>
+    <lastmod>2023-10-29T20:23:54.757Z</lastmod>
   </url>
   <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/gas.html</loc>
-    <lastmod>2023-10-09T12:12:08.370Z</lastmod>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/reproducibility.html</loc>
+    <lastmod>2023-10-29T20:23:53.661Z</lastmod>
   </url>
   <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/utils/utils.html</loc>
-    <lastmod>2023-10-09T12:12:09.970Z</lastmod>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/oil.html</loc>
+    <lastmod>2023-10-29T20:23:50.069Z</lastmod>
   </url>
   <url>
-    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/methodology.html</loc>
-    <lastmod>2023-10-09T12:12:11.706Z</lastmod>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/post-mortem-electricity.html</loc>
+    <lastmod>2023-10-29T20:23:53.125Z</lastmod>
+  </url>
+  <url>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/data.html</loc>
+    <lastmod>2023-10-29T20:23:54.381Z</lastmod>
   </url>
   <url>
     <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/index.html</loc>
-    <lastmod>2023-10-09T12:12:12.654Z</lastmod>
+    <lastmod>2023-10-29T20:23:55.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/methodology.html</loc>
+    <lastmod>2023-10-29T20:23:58.913Z</lastmod>
+  </url>
+  <url>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/utils/utils.html</loc>
+    <lastmod>2023-10-29T20:24:03.281Z</lastmod>
+  </url>
+  <url>
+    <loc>https://inseefrlab.github.io/ESA-Nowcasting-2024/gas.html</loc>
+    <lastmod>2023-10-29T20:24:06.733Z</lastmod>
   </url>
 </urlset>
