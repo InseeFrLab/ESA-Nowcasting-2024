@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>European Statistics Awards for Nowcasting – utils</title>
+<title>European Statistics Awards for Nowcasting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -80,7 +80,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -89,6 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -99,15 +106,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
+<meta property="og:title" content="European Statistics Awards for Nowcasting">
+<meta property="og:site_name" content="European Statistics Awards for Nowcasting">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../images/logo-INSEE.png" alt="" class="navbar-logo">
     </a>
@@ -119,48 +128,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Overview</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../methodology.html" rel="" target="">
- <span class="menu-text">Methodology</span></a>
+    <a class="nav-link" href="../methodology.html"> 
+<span class="menu-text">Methodology</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../data.html" rel="" target="">
- <span class="menu-text">Data</span></a>
+    <a class="nav-link" href="../data.html"> 
+<span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../gas.html" rel="" target="">
- <span class="menu-text">GAS</span></a>
+    <a class="nav-link" href="../gas.html"> 
+<span class="menu-text">GAS</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../oil.html" rel="" target="">
- <span class="menu-text">OIL</span></a>
+    <a class="nav-link" href="../oil.html"> 
+<span class="menu-text">OIL</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../electricity.html" rel="" target="">
- <span class="menu-text">ELECTRICITY</span></a>
+    <a class="nav-link" href="../electricity.html"> 
+<span class="menu-text">ELECTRICITY</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lessons-learned.html" rel="" target="">
- <span class="menu-text">Lessons Learned</span></a>
+    <a class="nav-link" href="../lessons-learned.html"> 
+<span class="menu-text">Lessons Learned</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../reproducibility.html" rel="" target="">
- <span class="menu-text">Reproducibility</span></a>
+    <a class="nav-link" href="../reproducibility.html"> 
+<span class="menu-text">Reproducibility</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/InseeFrLab/ESA-Nowcasting-2024" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/InseeFrLab/ESA-Nowcasting-2024"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -173,6 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 
 
@@ -380,9 +390,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </main> <!-- /main -->
-
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"mapping_countries_weights = [\n  {\"Name\": \"Austria\", \"ISO2\": \"AT\", \"GAS\": 1.56, \"OIL\": 1.93, \"ELECTRICITY\": 1.90},\n  {\"Name\": \"Belgium\", \"ISO2\": \"BE\", \"GAS\": 1.59, \"OIL\": 1.78, \"ELECTRICITY\": 1.99},\n  {\"Name\": \"Bulgaria\", \"ISO2\": \"BG\", \"GAS\": 1.66, \"OIL\": 1.43, \"ELECTRICITY\": 1.06},\n  {\"Name\": \"Cyprus\", \"ISO2\": \"CY\", \"GAS\": undefined, \"OIL\": 1.49, \"ELECTRICITY\": 0.50},\n  {\"Name\": \"Czech Republic\", \"ISO2\": \"CZ\", \"GAS\": 1.46, \"OIL\": 1.95, \"ELECTRICITY\": 1.60},\n  {\"Name\": \"Germany\", \"ISO2\": \"DE\", \"GAS\": 1.55, \"OIL\": 1.86, \"ELECTRICITY\": 1.99},\n  {\"Name\": \"Denmark\", \"ISO2\": \"DK\", \"GAS\": 1.47, \"OIL\": 1.74, \"ELECTRICITY\": 1.69},\n  {\"Name\": \"Estonia\", \"ISO2\": \"EE\", \"GAS\": 1.28, \"OIL\": 0.89, \"ELECTRICITY\": 1.12},\n  {\"Name\": \"Greece\", \"ISO2\": \"EL\", \"GAS\": 1.69, \"OIL\": 1.45, \"ELECTRICITY\": 0.90},\n  {\"Name\": \"Spain\", \"ISO2\": \"ES\", \"GAS\": 2.00, \"OIL\": 2.00, \"ELECTRICITY\": 1.65},\n  {\"Name\": \"Finland\", \"ISO2\": \"FI\", \"GAS\": 1.62, \"OIL\": 0.50, \"ELECTRICITY\": 1.25},\n  {\"Name\": \"France\", \"ISO2\": \"FR\", \"GAS\": 1.40, \"OIL\": 1.77, \"ELECTRICITY\": 0.92},\n  {\"Name\": \"Croatia\", \"ISO2\": \"HR\", \"GAS\": 1.64, \"OIL\": 1.67, \"ELECTRICITY\": 1.35},\n  {\"Name\": \"Hungary\", \"ISO2\": \"HU\", \"GAS\": 1.46, \"OIL\": 1.75, \"ELECTRICITY\": 2.00},\n  {\"Name\": \"Ireland\", \"ISO2\": \"IE\", \"GAS\": 1.07, \"OIL\": 1.22, \"ELECTRICITY\": 1.94},\n  {\"Name\": \"Italy\", \"ISO2\": \"IT\", \"GAS\": 1.66, \"OIL\": 1.77, \"ELECTRICITY\": 1.46},\n  {\"Name\": \"Lithuania\", \"ISO2\": \"LT\", \"GAS\": 1.36, \"OIL\": 1.69, \"ELECTRICITY\": 1.70},\n  {\"Name\": \"Luxembourg\", \"ISO2\": \"LU\", \"GAS\": 1.53, \"OIL\": 1.79, \"ELECTRICITY\": 1.42},\n  {\"Name\": \"Latvia\", \"ISO2\": \"LV\", \"GAS\": 1.30, \"OIL\": 1.75, \"ELECTRICITY\": 1.53},\n  {\"Name\": \"Malta\", \"ISO2\": \"MT\", \"GAS\": 1.47, \"OIL\": 0.50, \"ELECTRICITY\": 0.91},\n  {\"Name\": \"Netherlands\", \"ISO2\": \"NL\", \"GAS\": 1.68, \"OIL\": 1.95, \"ELECTRICITY\": 1.85},\n  {\"Name\": \"Poland\", \"ISO2\": \"PL\", \"GAS\": 1.76, \"OIL\": 1.91, \"ELECTRICITY\": 1.96},\n  {\"Name\": \"Portugal\", \"ISO2\": \"PT\", \"GAS\": 1.88, \"OIL\": 1.72, \"ELECTRICITY\": 1.48},\n  {\"Name\": \"Romania\", \"ISO2\": \"RO\", \"GAS\": 1.61, \"OIL\": 1.48, \"ELECTRICITY\": 1.70},\n  {\"Name\": \"Sweden\", \"ISO2\": \"SE\", \"GAS\": 1.30, \"OIL\": 0.51, \"ELECTRICITY\": 1.08},\n  {\"Name\": \"Slovenia\", \"ISO2\": \"SI\", \"GAS\": 1.70, \"OIL\": 1.52, \"ELECTRICITY\": 1.90},\n  {\"Name\": \"Slovakia\", \"ISO2\": \"SK\", \"GAS\": 0.50, \"OIL\": 1.80, \"ELECTRICITY\": 1.87},\n];\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"function get_weights_per_challenge(mapping, challenge) {\n  return mapping.filter(d => d[challenge] != undefined).map(({ Name, ISO2, [challenge]: Weight }) => ({ Name, ISO2, Weight }))\n\t}\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"function get_countries_per_challenge(mapping, challenge) {\n  return mapping\n    .filter(d => d[challenge] != undefined)\n    .reduce((acc, country) => { acc[country.ISO2] = country.Name;\n                                return acc; }, {}\n                                )\n\t}\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"map_country_name = mapping_countries_weights.reduce((acc, country) => {\n  acc[country.ISO2] = country.Name;\n  return acc;\n}, {})\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"function unique(data, accessor) {\nreturn Array.from(new Set(accessor ? data.map(accessor) : data));\n\t}\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"dateParser = (dateString) => {\n  const [year, month, day] = dateString.split('-')\n  const date = new Date(Date.UTC(year, month - 1, day, 0, 0, 0))\n  const timezoneOffset = date.getTimezoneOffset()\n  date.setMinutes(date.getMinutes() - timezoneOffset)\n  return date\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"\nfunction format_historical_data(data, country) {\n\n  let data_typed = transpose(data).map( d => (\n      {\n        date: dateParser(d.time),\n        values: d.values,\n        geo: d.geo\n      } \n     )\n   )\n  \nreturn data_typed.filter(d => d.geo == country);\n\t}\n\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"\nfunction format_pred_data(data, country) {\n\n  let pred_typed = transpose(data).map( d => (\n      {\n        date: dateParser(d.Date),\n        values: d.value,\n        geo: d.Country,\n        model: d.Entries\n      } \n     )\n   )\n  \n  return pred_typed.filter(d => d.geo == country);\n\t}\n\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"function format_summary_table_data(data, country, model, country_map) {\n  let table = transpose(data).map( d => (\n        {\n          Date: dateParser(d.Date),\n          Model: d.Entries,\n          Country: d.Country,\n          Forecast: d.value\n        } \n       )\n     )\n    .map(item => {\n      const dateStr = item.Date;\n      const date = new Date(dateStr);\n      const formattedDate = date.toLocaleString('en-US', { month: 'long', year: 'numeric' });\n      return { ...item, Date: formattedDate };\n    })\n    .map(item => {\n      const geoCode = item.Country;\n      const countryName = country_map[geoCode];\n      return { ...item, Country: countryName };\n    })\n    .filter(d => model.includes(d.Model) && (country.includes(\"All\") || country.includes(d.Country)));\n\n  return table\n\t}\n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"\nfunction format_errors_data(data, country) {\n\n  let data_formatted = transpose(data).map( d => (\n        {\n          Date: dateParser(d.time),\n          Model: d.Entries,\n          Country: d.geo,\n          Errors: d.error_squared\n        } \n       )\n     )\n    .filter(d => d.Country == country)\n\n  return data_formatted.filter(d => d.Country == country);\n\t}\n\n"},{"methodName":"interpret","cellName":"ojs-cell-11","inline":false,"source":"function format_ave_errors_data(data, country) {\n  return transpose(data).filter(d => d.geo == country);\n\t}\n\n"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im1hcHBpbmdfY291bnRyaWVzX3dlaWdodHMgPSBbXG4gIHtcIk5hbWVcIjogXCJBdXN0cmlhXCIsIFwiSVNPMlwiOiBcIkFUXCIsIFwiR0FTXCI6IDEuNTYsIFwiT0lMXCI6IDEuOTMsIFwiRUxFQ1RSSUNJVFlcIjogMS45MH0sXG4gIHtcIk5hbWVcIjogXCJCZWxnaXVtXCIsIFwiSVNPMlwiOiBcIkJFXCIsIFwiR0FTXCI6IDEuNTksIFwiT0lMXCI6IDEuNzgsIFwiRUxFQ1RSSUNJVFlcIjogMS45OX0sXG4gIHtcIk5hbWVcIjogXCJCdWxnYXJpYVwiLCBcIklTTzJcIjogXCJCR1wiLCBcIkdBU1wiOiAxLjY2LCBcIk9JTFwiOiAxLjQzLCBcIkVMRUNUUklDSVRZXCI6IDEuMDZ9LFxuICB7XCJOYW1lXCI6IFwiQ3lwcnVzXCIsIFwiSVNPMlwiOiBcIkNZXCIsIFwiR0FTXCI6IHVuZGVmaW5lZCwgXCJPSUxcIjogMS40OSwgXCJFTEVDVFJJQ0lUWVwiOiAwLjUwfSxcbiAge1wiTmFtZVwiOiBcIkN6ZWNoIFJlcHVibGljXCIsIFwiSVNPMlwiOiBcIkNaXCIsIFwiR0FTXCI6IDEuNDYsIFwiT0lMXCI6IDEuOTUsIFwiRUxFQ1RSSUNJVFlcIjogMS42MH0sXG4gIHtcIk5hbWVcIjogXCJHZXJtYW55XCIsIFwiSVNPMlwiOiBcIkRFXCIsIFwiR0FTXCI6IDEuNTUsIFwiT0lMXCI6IDEuODYsIFwiRUxFQ1RSSUNJVFlcIjogMS45OX0sXG4gIHtcIk5hbWVcIjogXCJEZW5tYXJrXCIsIFwiSVNPMlwiOiBcIkRLXCIsIFwiR0FTXCI6IDEuNDcsIFwiT0lMXCI6IDEuNzQsIFwiRUxFQ1RSSUNJVFlcIjogMS42OX0sXG4gIHtcIk5hbWVcIjogXCJFc3RvbmlhXCIsIFwiSVNPMlwiOiBcIkVFXCIsIFwiR0FTXCI6IDEuMjgsIFwiT0lMXCI6IDAuODksIFwiRUxFQ1RSSUNJVFlcIjogMS4xMn0sXG4gIHtcIk5hbWVcIjogXCJHcmVlY2VcIiwgXCJJU08yXCI6IFwiRUxcIiwgXCJHQVNcIjogMS42OSwgXCJPSUxcIjogMS40NSwgXCJFTEVDVFJJQ0lUWVwiOiAwLjkwfSxcbiAge1wiTmFtZVwiOiBcIlNwYWluXCIsIFwiSVNPMlwiOiBcIkVTXCIsIFwiR0FTXCI6IDIuMDAsIFwiT0lMXCI6IDIuMDAsIFwiRUxFQ1RSSUNJVFlcIjogMS42NX0sXG4gIHtcIk5hbWVcIjogXCJGaW5sYW5kXCIsIFwiSVNPMlwiOiBcIkZJXCIsIFwiR0FTXCI6IDEuNjIsIFwiT0lMXCI6IDAuNTAsIFwiRUxFQ1RSSUNJVFlcIjogMS4yNX0sXG4gIHtcIk5hbWVcIjogXCJGcmFuY2VcIiwgXCJJU08yXCI6IFwiRlJcIiwgXCJHQVNcIjogMS40MCwgXCJPSUxcIjogMS43NywgXCJFTEVDVFJJQ0lUWVwiOiAwLjkyfSxcbiAge1wiTmFtZVwiOiBcIkNyb2F0aWFcIiwgXCJJU08yXCI6IFwiSFJcIiwgXCJHQVNcIjogMS42NCwgXCJPSUxcIjogMS42NywgXCJFTEVDVFJJQ0lUWVwiOiAxLjM1fSxcbiAge1wiTmFtZVwiOiBcIkh1bmdhcnlcIiwgXCJJU08yXCI6IFwiSFVcIiwgXCJHQVNcIjogMS40NiwgXCJPSUxcIjogMS43NSwgXCJFTEVDVFJJQ0lUWVwiOiAyLjAwfSxcbiAge1wiTmFtZVwiOiBcIklyZWxhbmRcIiwgXCJJU08yXCI6IFwiSUVcIiwgXCJHQVNcIjogMS4wNywgXCJPSUxcIjogMS4yMiwgXCJFTEVDVFJJQ0lUWVwiOiAxLjk0fSxcbiAge1wiTmFtZVwiOiBcIkl0YWx5XCIsIFwiSVNPMlwiOiBcIklUXCIsIFwiR0FTXCI6IDEuNjYsIFwiT0lMXCI6IDEuNzcsIFwiRUxFQ1RSSUNJVFlcIjogMS40Nn0sXG4gIHtcIk5hbWVcIjogXCJMaXRodWFuaWFcIiwgXCJJU08yXCI6IFwiTFRcIiwgXCJHQVNcIjogMS4zNiwgXCJPSUxcIjogMS42OSwgXCJFTEVDVFJJQ0lUWVwiOiAxLjcwfSxcbiAge1wiTmFtZVwiOiBcIkx1eGVtYm91cmdcIiwgXCJJU08yXCI6IFwiTFVcIiwgXCJHQVNcIjogMS41MywgXCJPSUxcIjogMS43OSwgXCJFTEVDVFJJQ0lUWVwiOiAxLjQyfSxcbiAge1wiTmFtZVwiOiBcIkxhdHZpYVwiLCBcIklTTzJcIjogXCJMVlwiLCBcIkdBU1wiOiAxLjMwLCBcIk9JTFwiOiAxLjc1LCBcIkVMRUNUUklDSVRZXCI6IDEuNTN9LFxuICB7XCJOYW1lXCI6IFwiTWFsdGFcIiwgXCJJU08yXCI6IFwiTVRcIiwgXCJHQVNcIjogMS40NywgXCJPSUxcIjogMC41MCwgXCJFTEVDVFJJQ0lUWVwiOiAwLjkxfSxcbiAge1wiTmFtZVwiOiBcIk5ldGhlcmxhbmRzXCIsIFwiSVNPMlwiOiBcIk5MXCIsIFwiR0FTXCI6IDEuNjgsIFwiT0lMXCI6IDEuOTUsIFwiRUxFQ1RSSUNJVFlcIjogMS44NX0sXG4gIHtcIk5hbWVcIjogXCJQb2xhbmRcIiwgXCJJU08yXCI6IFwiUExcIiwgXCJHQVNcIjogMS43NiwgXCJPSUxcIjogMS45MSwgXCJFTEVDVFJJQ0lUWVwiOiAxLjk2fSxcbiAge1wiTmFtZVwiOiBcIlBvcnR1Z2FsXCIsIFwiSVNPMlwiOiBcIlBUXCIsIFwiR0FTXCI6IDEuODgsIFwiT0lMXCI6IDEuNzIsIFwiRUxFQ1RSSUNJVFlcIjogMS40OH0sXG4gIHtcIk5hbWVcIjogXCJSb21hbmlhXCIsIFwiSVNPMlwiOiBcIlJPXCIsIFwiR0FTXCI6IDEuNjEsIFwiT0lMXCI6IDEuNDgsIFwiRUxFQ1RSSUNJVFlcIjogMS43MH0sXG4gIHtcIk5hbWVcIjogXCJTd2VkZW5cIiwgXCJJU08yXCI6IFwiU0VcIiwgXCJHQVNcIjogMS4zMCwgXCJPSUxcIjogMC41MSwgXCJFTEVDVFJJQ0lUWVwiOiAxLjA4fSxcbiAge1wiTmFtZVwiOiBcIlNsb3ZlbmlhXCIsIFwiSVNPMlwiOiBcIlNJXCIsIFwiR0FTXCI6IDEuNzAsIFwiT0lMXCI6IDEuNTIsIFwiRUxFQ1RSSUNJVFlcIjogMS45MH0sXG4gIHtcIk5hbWVcIjogXCJTbG92YWtpYVwiLCBcIklTTzJcIjogXCJTS1wiLCBcIkdBU1wiOiAwLjUwLCBcIk9JTFwiOiAxLjgwLCBcIkVMRUNUUklDSVRZXCI6IDEuODd9LFxuXTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZ1bmN0aW9uIGdldF93ZWlnaHRzX3Blcl9jaGFsbGVuZ2UobWFwcGluZywgY2hhbGxlbmdlKSB7XG4gIHJldHVybiBtYXBwaW5nLmZpbHRlcihkID0+IGRbY2hhbGxlbmdlXSAhPSB1bmRlZmluZWQpLm1hcCgoeyBOYW1lLCBJU08yLCBbY2hhbGxlbmdlXTogV2VpZ2h0IH0pID0+ICh7IE5hbWUsIElTTzIsIFdlaWdodCB9KSlcblx0fVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZnVuY3Rpb24gZ2V0X2NvdW50cmllc19wZXJfY2hhbGxlbmdlKG1hcHBpbmcsIGNoYWxsZW5nZSkge1xuICByZXR1cm4gbWFwcGluZ1xuICAgIC5maWx0ZXIoZCA9PiBkW2NoYWxsZW5nZV0gIT0gdW5kZWZpbmVkKVxuICAgIC5yZWR1Y2UoKGFjYywgY291bnRyeSkgPT4geyBhY2NbY291bnRyeS5JU08yXSA9IGNvdW50cnkuTmFtZTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIGFjYzsgfSwge31cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKVxuXHR9XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtYXBfY291bnRyeV9uYW1lID0gbWFwcGluZ19jb3VudHJpZXNfd2VpZ2h0cy5yZWR1Y2UoKGFjYywgY291bnRyeSkgPT4ge1xuICBhY2NbY291bnRyeS5JU08yXSA9IGNvdW50cnkuTmFtZTtcbiAgcmV0dXJuIGFjYztcbn0sIHt9KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZnVuY3Rpb24gdW5pcXVlKGRhdGEsIGFjY2Vzc29yKSB7XG5yZXR1cm4gQXJyYXkuZnJvbShuZXcgU2V0KGFjY2Vzc29yID8gZGF0YS5tYXAoYWNjZXNzb3IpIDogZGF0YSkpO1xuXHR9XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJkYXRlUGFyc2VyID0gKGRhdGVTdHJpbmcpID0+IHtcbiAgY29uc3QgW3llYXIsIG1vbnRoLCBkYXldID0gZGF0ZVN0cmluZy5zcGxpdCgnLScpXG4gIGNvbnN0IGRhdGUgPSBuZXcgRGF0ZShEYXRlLlVUQyh5ZWFyLCBtb250aCAtIDEsIGRheSwgMCwgMCwgMCkpXG4gIGNvbnN0IHRpbWV6b25lT2Zmc2V0ID0gZGF0ZS5nZXRUaW1lem9uZU9mZnNldCgpXG4gIGRhdGUuc2V0TWludXRlcyhkYXRlLmdldE1pbnV0ZXMoKSAtIHRpbWV6b25lT2Zmc2V0KVxuICByZXR1cm4gZGF0ZVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5mdW5jdGlvbiBmb3JtYXRfaGlzdG9yaWNhbF9kYXRhKGRhdGEsIGNvdW50cnkpIHtcblxuICBsZXQgZGF0YV90eXBlZCA9IHRyYW5zcG9zZShkYXRhKS5tYXAoIGQgPT4gKFxuICAgICAge1xuICAgICAgICBkYXRlOiBkYXRlUGFyc2VyKGQudGltZSksXG4gICAgICAgIHZhbHVlczogZC52YWx1ZXMsXG4gICAgICAgIGdlbzogZC5nZW9cbiAgICAgIH0gXG4gICAgIClcbiAgIClcbiAgXG5yZXR1cm4gZGF0YV90eXBlZC5maWx0ZXIoZCA9PiBkLmdlbyA9PSBjb3VudHJ5KTtcblx0fVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbmZ1bmN0aW9uIGZvcm1hdF9wcmVkX2RhdGEoZGF0YSwgY291bnRyeSkge1xuXG4gIGxldCBwcmVkX3R5cGVkID0gdHJhbnNwb3NlKGRhdGEpLm1hcCggZCA9PiAoXG4gICAgICB7XG4gICAgICAgIGRhdGU6IGRhdGVQYXJzZXIoZC5EYXRlKSxcbiAgICAgICAgdmFsdWVzOiBkLnZhbHVlLFxuICAgICAgICBnZW86IGQuQ291bnRyeSxcbiAgICAgICAgbW9kZWw6IGQuRW50cmllc1xuICAgICAgfSBcbiAgICAgKVxuICAgKVxuICBcbiAgcmV0dXJuIHByZWRfdHlwZWQuZmlsdGVyKGQgPT4gZC5nZW8gPT0gY291bnRyeSk7XG5cdH1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC05IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZnVuY3Rpb24gZm9ybWF0X3N1bW1hcnlfdGFibGVfZGF0YShkYXRhLCBjb3VudHJ5LCBtb2RlbCwgY291bnRyeV9tYXApIHtcbiAgbGV0IHRhYmxlID0gdHJhbnNwb3NlKGRhdGEpLm1hcCggZCA9PiAoXG4gICAgICAgIHtcbiAgICAgICAgICBEYXRlOiBkYXRlUGFyc2VyKGQuRGF0ZSksXG4gICAgICAgICAgTW9kZWw6IGQuRW50cmllcyxcbiAgICAgICAgICBDb3VudHJ5OiBkLkNvdW50cnksXG4gICAgICAgICAgRm9yZWNhc3Q6IGQudmFsdWVcbiAgICAgICAgfSBcbiAgICAgICApXG4gICAgIClcbiAgICAubWFwKGl0ZW0gPT4ge1xuICAgICAgY29uc3QgZGF0ZVN0ciA9IGl0ZW0uRGF0ZTtcbiAgICAgIGNvbnN0IGRhdGUgPSBuZXcgRGF0ZShkYXRlU3RyKTtcbiAgICAgIGNvbnN0IGZvcm1hdHRlZERhdGUgPSBkYXRlLnRvTG9jYWxlU3RyaW5nKCdlbi1VUycsIHsgbW9udGg6ICdsb25nJywgeWVhcjogJ251bWVyaWMnIH0pO1xuICAgICAgcmV0dXJuIHsgLi4uaXRlbSwgRGF0ZTogZm9ybWF0dGVkRGF0ZSB9O1xuICAgIH0pXG4gICAgLm1hcChpdGVtID0+IHtcbiAgICAgIGNvbnN0IGdlb0NvZGUgPSBpdGVtLkNvdW50cnk7XG4gICAgICBjb25zdCBjb3VudHJ5TmFtZSA9IGNvdW50cnlfbWFwW2dlb0NvZGVdO1xuICAgICAgcmV0dXJuIHsgLi4uaXRlbSwgQ291bnRyeTogY291bnRyeU5hbWUgfTtcbiAgICB9KVxuICAgIC5maWx0ZXIoZCA9PiBtb2RlbC5pbmNsdWRlcyhkLk1vZGVsKSAmJiAoY291bnRyeS5pbmNsdWRlcyhcIkFsbFwiKSB8fCBjb3VudHJ5LmluY2x1ZGVzKGQuQ291bnRyeSkpKTtcblxuICByZXR1cm4gdGFibGVcblx0fVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuZnVuY3Rpb24gZm9ybWF0X2Vycm9yc19kYXRhKGRhdGEsIGNvdW50cnkpIHtcblxuICBsZXQgZGF0YV9mb3JtYXR0ZWQgPSB0cmFuc3Bvc2UoZGF0YSkubWFwKCBkID0+IChcbiAgICAgICAge1xuICAgICAgICAgIERhdGU6IGRhdGVQYXJzZXIoZC50aW1lKSxcbiAgICAgICAgICBNb2RlbDogZC5FbnRyaWVzLFxuICAgICAgICAgIENvdW50cnk6IGQuZ2VvLFxuICAgICAgICAgIEVycm9yczogZC5lcnJvcl9zcXVhcmVkXG4gICAgICAgIH0gXG4gICAgICAgKVxuICAgICApXG4gICAgLmZpbHRlcihkID0+IGQuQ291bnRyeSA9PSBjb3VudHJ5KVxuXG4gIHJldHVybiBkYXRhX2Zvcm1hdHRlZC5maWx0ZXIoZCA9PiBkLkNvdW50cnkgPT0gY291bnRyeSk7XG5cdH1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZ1bmN0aW9uIGZvcm1hdF9hdmVfZXJyb3JzX2RhdGEoZGF0YSwgY291bnRyeSkge1xuICByZXR1cm4gdHJhbnNwb3NlKGRhdGEpLmZpbHRlcihkID0+IGQuZ2VvID09IGNvdW50cnkpO1xuXHR9XG5cbiJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -471,10 +480,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -484,8 +492,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -498,6 +515,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -541,6 +677,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -566,6 +703,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -628,19 +791,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-left">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/InseeFrLab/ESA-Nowcasting-2024/edit/main/utils/utils.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/InseeFrLab/ESA-Nowcasting-2024/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/InseeFrLab/ESA-Nowcasting-2024/edit/main/utils/utils.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/InseeFrLab/ESA-Nowcasting-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../LICENCE.html">License</a>
+    <a class="nav-link" href="../LICENCE.html">
+<p>License</p>
+</a>
   </li>  
 </ul>
     </div>
   </div>
 </footer>
+
 
 
 
