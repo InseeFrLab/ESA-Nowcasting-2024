@@ -19,9 +19,9 @@ ELECTRICITY :
   principal_code : E7000
 
 DATES :
-  current_date : "2023-12-01"
-  date_to_pred : "2024-01-01"
-  month_to_pred : "january"
+  current_date : "2024-01-01"
+  date_to_pred : "2024-02-01"
+  month_to_pred : "february"
 
 COUNTRIES:
   AT: Austria
