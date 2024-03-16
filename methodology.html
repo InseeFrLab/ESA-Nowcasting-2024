@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -358,7 +358,7 @@ X_t = \Lambda F_{t} + \xi_t, \qquad \xi_t \sim N(0, R)
 <section id="data-used-and-estimation" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="data-used-and-estimation">Data used and estimation</h3>
 <p>For the estimation of our Dynamics Factor Models (DFM), we utilized three main sources of data to capture different aspects of the economic and financial activity. These data sources include Eurostat data for economic activity, financial data obtained using the Yahoo API for financial activity, and Google Trends data for capturing more recent evolutions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. By incorporating these three main sources of data, we aim to capture different aspects of the economic and financial activity, ranging from long-term trends to short-term fluctuations and recent evolutions. This multi-source data approach allows us to build a more comprehensive and robust DFM model, which can provide more accurate and timely nowcasting predictions for the variables of interest.</p>
-<div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;You can refer to the <a href="./data.html#sec-data-eurostat">Data</a> section for more extensive details on the data that has been used.</p></div><p>For the estimation of our various Dynamics Factor Models (DFM), we relied on the “dfms” package in R, a powerful and user-friendly tool for estimating DFMs from time series data. The “dfms” package provides convenient and efficient methods for DFM estimation, making it an invaluable resource for our nowcasting project. Its user-friendly interface and optimized algorithms make it easy to implement and customize DFM models, while its efficient computational capabilities enable us to handle large datasets with ease. It allows different type of estimations (see <span class="citation" data-cites="doz2011two">Doz, Giannone, and Reichlin (<a href="#ref-doz2011two" role="doc-biblioref">2011</a>)</span>, <span class="citation" data-cites="doz2012quasi">Doz, Giannone, and Reichlin (<a href="#ref-doz2012quasi" role="doc-biblioref">2012</a>)</span> and <span class="citation" data-cites="banbura2014maximum">Banbura and Modugno (<a href="#ref-banbura2014maximum" role="doc-biblioref">2014</a>)</span>). We really want to thanks Sebastian Krantz, the creator of this package.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;You can refer to the <a href="./data.html#sec-data-eurostat">Data</a> section for more extensive details on the data that has been used.</p></div></div><p>For the estimation of our various Dynamics Factor Models (DFM), we relied on the “dfms” package in R, a powerful and user-friendly tool for estimating DFMs from time series data. The “dfms” package provides convenient and efficient methods for DFM estimation, making it an invaluable resource for our nowcasting project. Its user-friendly interface and optimized algorithms make it easy to implement and customize DFM models, while its efficient computational capabilities enable us to handle large datasets with ease. It allows different type of estimations (see <span class="citation" data-cites="doz2011two">Doz, Giannone, and Reichlin (<a href="#ref-doz2011two" role="doc-biblioref">2011</a>)</span>, <span class="citation" data-cites="doz2012quasi">Doz, Giannone, and Reichlin (<a href="#ref-doz2012quasi" role="doc-biblioref">2012</a>)</span> and <span class="citation" data-cites="banbura2014maximum">Banbura and Modugno (<a href="#ref-banbura2014maximum" role="doc-biblioref">2014</a>)</span>). We really want to thanks Sebastian Krantz, the creator of this package.</p>
 <p>To ensure the robustness and accuracy of our DFM estimation, we took several steps beforehand the estimation pipeline of the “dfms” package. Since there are no trend or intercept terms in <a href="#eq-factor-equation" class="quarto-xref">Equation&nbsp;1</a> and <a href="#eq-measurement-equation" class="quarto-xref">Equation&nbsp;2</a>, we made <span class="math inline">\(X_t\)</span> stationary by taking a first difference. Note that <span class="math inline">\(X_t\)</span> is also standardized (scaled and centered) automatically by the “dfms” package.</p>
 <p>We also pay attention to the availability of the data to ensure that each observed series have sufficient data for estimation. If any series have inadequate data, it is removed from the estimation process to prevent biased results. We also account for potential collinearities that could occur among several economic variables. Highly correlated series (<span class="math inline">\(\rho \geq 0.9999\)</span>) are removed to mitigate multicollinearity issues and improve estimation accuracy.</p>
 <p>To determine the optimal values for the number of lags and factors in our DFM models, we use the <span class="citation" data-cites="bai2002determining">Bai and Ng (<a href="#ref-bai2002determining" role="doc-biblioref">2002</a>)</span> criteria, which provides statistical guidelines for selecting these parameters. We set a maximum limit of 4 lags and 2 factors for computational efficiency reasons.</p>
@@ -604,6 +604,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/inseefrlab\.github\.io\/ESA-Nowcasting-2024\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -638,7 +656,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
