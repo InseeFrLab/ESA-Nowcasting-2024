@@ -2,9 +2,18 @@
 title: Data
 ---
 
-We take great pride in our dedication to using exclusively open data sources in our modeling efforts, which was a fundamental aspect of our approach during the challenge. While some proprietary data sources may have had greater predictive power, we firmly believed that utilizing open data sources was crucial to promoting the principles of transparency and reproducibility in our modeling efforts. By leveraging publicly available data, we were able to derive nowcasts of key economic indicators while ensuring that our work can be easily replicated and validated by others in the official statistics community. This approach not only provided us with a robust foundation for our models but also served to promote the values of open science, data transparency, and reproducibility.
+We take great pride in our dedication to using exclusively open data sources in our modeling efforts, which was a fundamental aspect of our approach during the challenge.
+While some proprietary data sources may have had greater predictive power, we firmly believed that utilizing open data sources was crucial to promoting the principles of transparency and reproducibility in our modeling efforts.
+By leveraging publicly available data, we were able to derive nowcasts of key economic indicators while ensuring that our work can be easily replicated and validated by others in the official statistics community.
+This approach not only provided us with a robust foundation for our models but also served to promote the values of open science, data transparency, and reproducibility.
 
-During the challenge, we utilized three primary sources of data to inform our modeling efforts. The first source was **economic data** from the Eurostat database, which provided us with a comprehensive overview of the economic situation in the European Union. The second source of data was **financial data**, which provided us with valuable insights into the financial context surrounding each of the challenges. This data included stock prices, exchange rates, and other financial indicators that were useful in predicting economic trends and identifying potential risks. Finally, we also used **Google Trends** data to capture the most recent trends and shifts in consumer behavior. This data enabled us to monitor changes in search volume for specific keywords, which served as an early warning system for sudden changes in consumer sentiment and preferences. Overall, our use of these three distinct sources of data allowed us to develop a comprehensive understanding of the economic landscape and to generate nowcasts of the 3 target variables.
+During the challenge, we utilized three primary sources of data to inform our modeling efforts.
+The first source was **economic data** from the Eurostat database, which provided us with a comprehensive overview of the economic situation in the European Union.
+The second source of data was **financial data**, which provided us with valuable insights into the financial context surrounding each of the challenges.
+This data included stock prices, exchange rates, and other financial indicators that were useful in predicting economic trends and identifying potential risks.
+Finally, we also used **Google Trends** data to capture the most recent trends and shifts in consumer behavior.
+This data enabled us to monitor changes in search volume for specific keywords, which served as an early warning system for sudden changes in consumer sentiment and preferences.
+Overall, our use of these three distinct sources of data allowed us to develop a comprehensive understanding of the economic landscape and to generate nowcasts of the 3 target variables.
 
 ## Economic data from Eurostat database{#sec-data-eurostat}
 
@@ -12,46 +21,45 @@ We use classic macroeconomic variables provided to Eurostat by European countrie
 These series are automatically retrieved from Eurostat database through its API.
 
 
-1.  [Producer prices in industry](https://ec.europa.eu/eurostat/databrowser/view/sts_inppd_m/default/table?lang=en):
+1.  [Supply, transformation and consumption of gas](https://ec.europa.eu/eurostat/databrowser/view/nrg_cb_gasm/default/table?lang=en):
+
+    The NRG_CB_GASM belongs to the monthly European statistics that cover the most important energy commodities.
+    For inland gas consumption, the data are collected by the reporting countries via separate dedicated questionnaires and subsequently aggregated and transferred to Eurostat.
+
+
+2.  [Supply and transformation of oil and petroleum products](https://ec.europa.eu/eurostat/databrowser/view/nrg_cb_gasm/default/table?lang=en):
+
+    NRG_CB_OILM belongs to the monthly European statistics that cover the most important energy commodities.
+    For oil and petroleum product deliveries, the data are collected by the reporting countries via separate dedicated questionnaires and subsequently aggregated and transferred to Eurostat.
+
+3.  [Supply, transformation and consumption of electricity](https://ec.europa.eu/eurostat/databrowser/view/nrg_cb_e/default/table?lang=en):
+
+    NRG-CB_EM belongs to the monthly European statistics that cover the most important energy commodities.
+    For electricity availability, the data are collected by the reporting countries via separate dedicated questionnaires and subsequently aggregated and transferred to Eurostat.
+
+4.  [Producer prices in industry](https://ec.europa.eu/eurostat/databrowser/view/nrg_cb_oilm/default/table?lang=en):
 
     Producer Price in Industry (PPI) refers to the average price that domestic producers receive for the goods and services they produce.
     This indicator measures changes in the price of goods and services at the producer level, and it is considered an important leading indicator of inflation.
 
-    Specificities:
-
-        -   The PPI challenge refers to this indicator for a particular NACE
-        -   Total on domestic market (target variable)
-        -   Division level of NACE and MIGs
-
-2.  [Import prices in industry](https://ec.europa.eu/eurostat/databrowser/view/sts_inpi_m/default/table?lang=en):
+5.  [Import prices in industry](https://ec.europa.eu/eurostat/databrowser/view/sts_inpi_m/default/table?lang=en):
 
     Import prices in industry, also known as industrial import price index (IPI), refer to the cost of goods and services imported into a country for use in production.
     This indicator reflects changes in the prices of imported raw materials, intermediate goods, and capital equipment, and it is influenced by factors such as exchange rates, global commodity prices, and trade policies.
-    
-    Specificities:
-    
-        -   Total
-        -   Division level of CPA and MIGs
 
-3.  [Production index in industry](https://ec.europa.eu/eurostat/databrowser/view/sts_inpr_m/default/table?lang=en) :
+6.  [Production index in industry](https://ec.europa.eu/eurostat/databrowser/view/sts_inpr_m/default/table?lang=en) :
 
     The Production Index in Industry (or Production Volume in Industry - PVI) is a measure of the physical output of the industrial sector of an economy.
     It tracks changes in the volume of goods produced over time, and it is considered an important indicator of the health and performance of the manufacturing sector.
     The production index can be used to assess trends in productivity, capacity utilization, and competitiveness.
     
-    Specificities:
-    
-        -   The PVI challenge refers to this indicator for a particular NACE
-        -   Total
-        -   Intermediary goods (MIG_ING)
-
-4.  [Harmonised Index of Consumer Prices](https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_midx/default/table?lang=en) on a few products
+7.  [Harmonised Index of Consumer Prices](https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_midx/default/table?lang=en) on a few products
 
     The Harmonised Index of Consumer Prices (HICP) is a measure of inflation that is used to compare price changes across the European Union.
     It tracks the average change over time in the prices of goods and services that households consume, including food, housing, transportation, and healthcare.
     The HICP is calculated using a harmonised methodology that ensures comparability across EU member states, and it is published on a monthly basis by Eurostat. It is a key indicator of price stability.
 
-5.  [Business survey in industry](https://ec.europa.eu/eurostat/databrowser/view/ei_bsin_m_r2/default/table?lang=en):
+8.  [Business survey in industry](https://ec.europa.eu/eurostat/databrowser/view/ei_bsin_m_r2/default/table?lang=en):
 
     The Business Survey in Industry is a survey conducted by Eurostat to gather information on the business conditions and expectations of companies in the manufacturing sector.
     The survey covers a range of topics, including production, new orders, inventories, employment, prices, and investment, and it is conducted on a monthly basis across the European Union.
@@ -67,7 +75,7 @@ These series are automatically retrieved from Eurostat database through its API.
         -   Assessment of the current level of stocks of finished products
         -   Selling price expectations over the next 3 months
 
-6.  [Consumer survey in industry](https://ec.europa.eu/eurostat/databrowser/view/ei_bsco_m/default/table?lang=en):
+9.  [Consumer survey in industry](https://ec.europa.eu/eurostat/databrowser/view/ei_bsco_m/default/table?lang=en):
 
     The Consumer Survey in Industry is a survey conducted by Eurostat to gather information on the consumer sentiment and behavior in the European Union.
     The survey covers a range of topics, including household income, savings, spending intentions, and major purchases, and it is conducted on a monthly basis.
@@ -90,16 +98,6 @@ These series are automatically retrieved from Eurostat database through its API.
         -   Statement on financial situation of household
         -   Consumer confidence indicator
 
-7.  [Number of nights spent at tourist accommodation establishments](https://ec.europa.eu/eurostat/databrowser/view/tour_occ_nim/default/table?lang=en)
-
-    The number of nights spent at tourist accommodation establishments is a measure of the volume of tourism activity in a country.
-    It refers to the total number of nights that guests spend in all types of tourist accommodation establishments, including hotels, campsites, holiday homes, and other types of accommodation.
-    This indicator is important for assessing the contribution of tourism to the economy, as well as for monitoring the performance and competitiveness of the tourism sector.
-
-    Specificities:
-    
-        -   The TOURISM challenge refers to this indicator
-
 
 ## Financial data from Yahoo Finance
 
@@ -121,21 +119,31 @@ We used its API to get the latest financial data to improve our short-term predi
     The Brent Crude Oil Last Day Financial Futures Stock Price is a benchmark for the price of crude oil from the North Sea, which is used as a pricing reference for approximately two-thirds of the world's traded crude oil.
     As a financial futures contract, it allows investors to trade the price of oil without actually buying or selling the physical commodity.
     The stock price reflects the market's perception of supply and demand dynamics, geopolitical risks, and other macroeconomic factors that impact the oil market.
+    
+3.  [Crude Oil Futures Price](https://finance.yahoo.com/quote/CL=F/)
 
-3.  [S&P 500 Index Stock Price](https://finance.yahoo.com/quote/%5EGSPC)
+    Crude oil futures price refers to the agreed-upon price for the delivery of a specified quantity of crude oil at a future date.
+    It's determined through trading on futures exchanges, where buyers and sellers speculate on future oil prices based on various factors such as supply and demand dynamics, geopolitical events, and market sentiment.
+
+4.  [Natural Gas Futures Price](https://finance.yahoo.com/quote/NG=F)
+
+    Natural gas futures price is the agreed-upon price for the delivery of a specified quantity of natural gas at a future date.
+    Like crude oil futures, it's determined through trading on futures exchanges, where participants speculate on future natural gas prices based on factors such as supply and demand dynamics, weather patterns, storage levels, and geopolitical developments.
+
+5.  [S&P 500 Index Stock Price](https://finance.yahoo.com/quote/%5EGSPC)
 
     The S&P 500 Index stock is a market capitalization-weighted index of 500 leading publicly traded companies in the United States.
     It is widely considered to be a barometer of the US stock market's performance, providing investors with a broad-based measure of the economy's health and direction.
     The S&P 500 index includes companies from a range of sectors, such as technology, healthcare, finance, and energy, making it a diversified indicator of the US equity market.
 
-4.  [Euro stoxx 50 Index Stock Price](https://finance.yahoo.com/quote/%5ESTOXX50E)
+7.  [Euro stoxx 50 Index Stock Price](https://finance.yahoo.com/quote/%5ESTOXX50E)
 
     The Euro Stoxx 50 Index stock is a market capitalization-weighted index of 50 leading blue-chip companies from 12 Eurozone countries.
     It is designed to reflect the performance of the Eurozone's most liquid and largest companies across a range of industries, including banking, energy, consumer goods, and healthcare.
     As a widely recognized benchmark of the Eurozone equity market, the Euro Stoxx 50 Index stock is used by investors and analysts to track market trends, benchmark portfolio performance, and identify investment opportunities.
     Movements in the index are influenced by a range of factors, such as economic growth prospects, monetary policy decisions, geopolitical risks, and corporate earnings announcements.
 
-5.  [CAC40 Index Stock Price](https://finance.yahoo.com/quote/%5EFCHI)
+8.  [CAC40 Index Stock Price](https://finance.yahoo.com/quote/%5EFCHI)
 
     The CAC 40 Index Stock is a benchmark index of the top 40 companies listed on the Euronext Paris Stock Exchange, representing a broad range of industries such as energy, finance, healthcare, and technology.
     It is the most widely used indicator of the French equity market's performance and is considered one of the leading indices in Europe.
@@ -159,14 +167,9 @@ This approach can help to remove the downward bias common to all Google Trends v
 
 Observed categories:
 
-1.  Manufacturing
-2.  Industrial Materials & Equipment
-3.  Fuel Economy & Gas Prices
-4.  Hotels & Accommodations
-5.  Travel Agencies & Services
-6.  Vacation Offers
-7.  Mountain & Ski Resorts
-
+1.  Fuel Economy & Gas Prices
+2.  Electricity
+3.  Oil & gas
 
 ## Other data
 
@@ -182,10 +185,6 @@ We retrieve the number of weekend days per month to include it as a feature to o
 ### Leading national indicators
 
 1. Germany developed some experimental indicators on activity. We use the daily Truck toll mileage index accessible on [Destatis website](https://www.destatis.de/EN/Service/EXDAT/Datensaetze/truck-toll-mileage.html).
-
-\br
-
-2. The [Weekly WIFO Economic Index](https://www.wifo.ac.at/en/topics/business_cycle/wifo_leading_indicator/wifo_leading_indicator) is a measure of the real economic activity of the Austrian economy. We use its industrial production component.
 
 ### Other potential interesting data sources (not identified in open data sources)
 
