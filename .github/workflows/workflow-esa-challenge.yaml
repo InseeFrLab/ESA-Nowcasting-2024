@@ -3,9 +3,10 @@ name: Run ESA Challenge
 on:
   schedule:
     # every 16th day of the month at 11am
-    - cron: '00 11 16 * *'
+    # - cron: '00 11 16 * *'
     # every last week of the month at 1pm
-    - cron: '00 13 25-31 * *'
+    # - cron: '00 13 25-31 * *'
+    - cron: '00 11 01 * *'
   pull_request:
   workflow_dispatch:
 

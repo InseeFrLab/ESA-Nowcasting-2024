@@ -64,6 +64,12 @@ GAS:
     entry_3: ETS
     entry_4: XGBOOST
     entry_5: LSTM
+  april:
+    entry_1: REGARIMA
+    entry_2: DFM
+    entry_3: ETS
+    entry_4: XGBOOST
+    entry_5: LSTM
 OIL:
   june:
     entry_1: REGARIMA
@@ -125,6 +131,12 @@ OIL:
     entry_3: ETS
     entry_4: XGBOOST
     entry_5: LSTM
+  april:
+    entry_1: REGARIMA
+    entry_2: DFM
+    entry_3: ETS
+    entry_4: XGBOOST
+    entry_5: LSTM
 ELECTRICITY:
   june:
     entry_1: REGARIMA
@@ -181,6 +193,12 @@ ELECTRICITY:
     entry_4: XGBOOST
     entry_5: LSTM
   march:
+    entry_1: REGARIMA
+    entry_2: DFM
+    entry_3: ETS
+    entry_4: XGBOOST
+    entry_5: LSTM
+  april:
     entry_1: REGARIMA
     entry_2: DFM
     entry_3: ETS
