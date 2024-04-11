@@ -6,10 +6,8 @@ title: European oil and petroleum product deliveries challenge
 challenge = "OIL"
 ```
 
-The monthly PVI indicator represents the production index in industry.
-The objective of the index is to measure changes in the volume of output at monthly intervals.
-It provides a measure of the volume trend in value added over a given reference period.
-The production index is calculated in the form of a Laspeyres type index.
+Oil deliveries statistics are a key part of the system of energy statistics in the EU and have a long history of data collection.
+For this indicator, the benchmark will be the official figures on Oil and petroleum product deliveries in each European country.
 
 ## Next forecast for a given country
 
@@ -27,7 +25,7 @@ viewof country = Inputs.select(Object.values(country_map), {
 Plot.plot({
   grid: true,
   y: {
-    label: "↑ Production volume in industry",
+    label: "↑ Oil and petroleum product deliveries",
   },  
   x: {
       label: "Year",
