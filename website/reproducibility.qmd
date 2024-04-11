@@ -4,7 +4,7 @@ title: Reproducibility
 
 At the INSEE Innovation Team, we greatly value the concept of reproducibility in scientific research. We understand that reproducibility is crucial for ensuring the credibility and trustworthiness of scientific findings. That's why we prioritize documenting our research methodologies, data analyses, and experimental processes in a transparent and accessible manner. Our commitment to reproducibility is driven by a desire to contribute to the advancement of scientific knowledge and promote rigorous research practices.
 
-## Getting started [![](https://img.shields.io/badge/Launch-Datalab-orange?logo=R)](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&service.image.custom.enabled=true&service.image.pullPolicy=%C2%ABAlways%C2%BB&service.image.custom.version=%C2%ABinseefrlab%2Fesa-nowcasting-2023%3Av7.0.0%C2%BB&init.personalInit=%C2%ABhttps%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FESA-Nowcasting-2023%2Fmain%2Fsetup.sh%C2%BB&onyxia.friendlyName=%C2%ABesa-nowcasting%C2%BB)
+## Getting started [![](https://img.shields.io/badge/Launch-Datalab-orange?logo=R)](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&service.image.custom.enabled=true&service.image.pullPolicy=%C2%ABAlways%C2%BB&service.image.custom.version=%C2%ABinseefrlab%2Fesa-nowcasting-2024%3Av2.0.0%C2%BB&init.personalInit=%C2%ABhttps%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FESA-Nowcasting-2024%2Fmain%2Fsetup.sh%C2%BB&onyxia.friendlyName=%C2%ABesa-nowcasting%C2%BB)
 
 
 To ensure full reproducibility of the results, the project is accompanied by a [Docker image](https://hub.docker.com/r/inseefrlab/esa-nowcasting-2023) that contains all the necessary packages and dependencies. You can pull the Docker image using the following command in your terminal after installing [Docker](https://www.docker.com/) :
@@ -18,9 +18,9 @@ Alternatively, you can use the [Onyxia instance SSPCloud](https://github.com/Ins
 To get started with SSPCloud:
 
 - <ins>**Step 0**</ins>: Go to [https://datalab.sspcloud.fr/home](https://datalab.sspcloud.fr/home). Click on **Sign In** and then **Create an account** with your academic or institutional email address.
-- <ins>**Step 1**</ins>: Click [here](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&service.image.custom.enabled=true&service.image.pullPolicy=%C2%ABAlways%C2%BB&service.image.custom.version=%C2%ABinseefrlab%2Fesa-nowcasting-2023%3Av7.0.0%C2%BB&init.personalInit=%C2%ABhttps%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FESA-Nowcasting-2023%2Fmain%2Fsetup.sh%C2%BB&onyxia.friendlyName=%C2%ABesa-nowcasting%C2%BB) or on the orange badge on top of the page.
+- <ins>**Step 1**</ins>: Click [here](https://datalab.sspcloud.fr/launcher/ide/rstudio?autoLaunch=false&service.image.custom.enabled=true&service.image.pullPolicy=%C2%ABAlways%C2%BB&service.image.custom.version=%C2%ABinseefrlab%2Fesa-nowcasting-2024%3Av2.0.0%C2%BB&init.personalInit=%C2%ABhttps%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FESA-Nowcasting-2024%2Fmain%2Fsetup.sh%C2%BB&onyxia.friendlyName=%C2%ABesa-nowcasting%C2%BB) or on the orange badge on top of the page.
 - <ins>**Step 2**</ins>: **Open** the service and follow the instructions regarding *username* and *credentials*.
-- <ins>**Step 3**</ins>: **Open a new project** by clicking the following file: `~/work/ESA-Nowcasting-2023/ESA-Nowcasting-2023.Rproj`.
+- <ins>**Step 3**</ins>: **Open a new project** by clicking the following file: `~/work/ESA-Nowcasting-2023/ESA-Nowcasting-2024.Rproj`.
 - <ins>**Step 4**</ins>: Ensure all necessary packages are installed by executing the ```renv::restore()``` command in the console. If prompted to proceed with the installation, enter `y`.
 
 You are all set!
@@ -32,7 +32,7 @@ You are all set!
 All functions used in the project are organized by theme in the ```R/``` folder :
 
 ```
-ESA-Nowcasting-2023
+ESA-Nowcasting-2024
 └─── R
      │ data_preprocessing.R
      │ data_retrieval.R
@@ -74,9 +74,16 @@ Note that the data used for the challenges is stored in a private bucket, and wr
 
 ## Replicating past results
 
-We have made it a priority to ensure the full reproducibility of all our past submissions. In order to achieve this, we have taken the necessary steps to automatically save the data used for each specific submission in a publicly accessible S3 bucket. This allows anyone to easily access the exact datasets that were utilized in our analyses. In the event that there have been changes to the model codes, it is simply a matter of checking out the commit corresponding to the submission date and adjusting the relevant date variables in the `challenges.yaml` configuration file. By combining the code retrieval with the availability of the specific datasets, we have established a robust framework that enables the replication and verification of our past results. This commitment to transparency and reproducibility ensures that the findings and outcomes of our submissions can be reliably validated and built upon by anyone.
+We have made it a priority to ensure the full reproducibility of all our past submissions.
+In order to achieve this, we have taken the necessary steps to automatically save the data used for each specific submission in a publicly accessible S3 bucket.
+This allows anyone to easily access the exact datasets that were utilized in our analyses.
+In the event that there have been changes to the model codes, it is simply a matter of checking out the commit corresponding to the submission date and adjusting the relevant date variables in the `challenges.yaml` configuration file.
+By combining the code retrieval with the availability of the specific datasets, we have established a robust framework that enables the replication and verification of our past results.
+This commitment to transparency and reproducibility ensures that the findings and outcomes of our submissions can be reliably validated and built upon by anyone.
 
 :::{.callout-note}
 ## Any issues?
-If you encounter any difficulties or require assistance in replicating our past results, please do not hesitate to reach out to us. We understand that the replication process can sometimes be challenging, and we are here to provide support and guidance. Our team is available to answer any questions, clarify any uncertainties, and offer further explanations regarding the methodologies, data, or code used in our previous submissions.
+If you encounter any difficulties or require assistance in replicating our past results, please do not hesitate to reach out to us.
+We understand that the replication process can sometimes be challenging, and we are here to provide support and guidance.
+Our team is available to answer any questions, clarify any uncertainties, and offer further explanations regarding the methodologies, data, or code used in our previous submissions.
 :::

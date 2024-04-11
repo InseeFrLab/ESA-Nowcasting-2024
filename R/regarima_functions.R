@@ -90,28 +90,6 @@ estimate_regarima <- function(challenge, data, models, country, h) {
 
   parameters <- c(parameters, list(usrdef.var = data$X))
 
-  # Fine-tuning on the length of the estimation period (especially due to contraints on availability or the quality)
-  # if (challenge == "PPI") {
-  #   if (country %in% c("EE")) {
-  #     parameters$estimate.from <- "2012-01-01"
-  #   }
-  #   if (country %in% c("LT")) {
-  #     parameters$estimate.from <- "2011-01-01"
-  #   }
-  #   if (country %in% c("LV")) {
-  #     parameters$estimate.from <- "2015-01-01"
-  #   }
-  # }
-  #
-  # if (challenge == "PVI") {
-  #   if (country %in% c("DE")) {
-  #     parameters$estimate.from <- "2015-01-01"
-  #   }
-  #   if (country %in% c("AT")) {
-  #     parameters$estimate.from <- "2021-06-01"
-  #   }
-  # }
-
   # Call of the Regarima (tramo version) function implemented in the JDemetra package
   specification <- do.call(RJDemetra::regarima_spec_tramoseats, parameters)
   regarima <- RJDemetra::regarima(data$y, specification)

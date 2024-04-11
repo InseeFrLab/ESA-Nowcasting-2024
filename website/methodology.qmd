@@ -41,7 +41,7 @@ The final nowcast value is provided by the projection of the model at horizon 1,
 
 ### Seasonal adjustment for electricity
 
-For electricity, the seasonal component is very strong and may not be the same as the explanatory variables. An X13 pre-treatment is applied to seasonnally adjust and correct for trading days the target variable (Number of nights spent at tourist accommodation establishments) and the potential explanatory variables. This treatment also provides a prediction for the seasonal coefficient of the nowcasted month.
+For electricity, the seasonal component is very strong and may not be the same as the explanatory variables. An X13 pre-treatment is applied to seasonnally adjust and correct for trading days the target variable and the potential explanatory variables. This treatment also provides a prediction for the seasonal coefficient of the nowcasted month.
 
 Next, seasonally adjusted variables are put in the REGARIMA model. The final step involves nowcasting the "raw value" by dividing the SA forecast by the projected seasonal coefficient.
 
@@ -143,9 +143,7 @@ XGBoost is a powerful algorithm that has gained popularity in the field
 of machine learning due to its ability to handle complex interactions
 between variables and its flexibility in handling various types of data.
 In the context of Eurostat's nowcasting competition, we utilized the
-XGBoost algorithm to predict the values of the Producer Price Index, the
-Producer Volume Index and the Number of nights spent at tourist
-accommodation establishments for most European countries. We will delve
+XGBoost algorithm to predict the our values for most European countries. We will delve
 here into the technicalities of the XGBoost approach, and how we
 tailored it to our specific nowcasting problem.
 
@@ -226,7 +224,7 @@ During the training process, the LSTM model is fed a sequence of inputs, with ea
 
 One of the challenges of using LSTMs for time series forecasting is selecting an appropriate window size, or the number of previous timesteps that the model should consider when making each prediction. A larger window size can capture longer-term trends in the data, but may also introduce more noise and complicate the training process. A smaller window size, on the other hand, may be more sensitive to short-term fluctuations in the data, but may not capture longer-term trends as effectively.
 
-In the context of the Eurostat competition, the LSTM approach was used to predict the value of several economic indicators, including the Producer prices in industry, the Producer volume in industry and the Number of nights spent at tourist accommodation establishments. The time series data for each country was transformed into a format that was suitable for LSTM training, with each row representing a single timestep in the time series and the columns representing the various input features.
+In the context of the Eurostat competition, the LSTM approach was used to predict the value of several economic indicators. The time series data for each country was transformed into a format that was suitable for LSTM training, with each row representing a single timestep in the time series and the columns representing the various input features.
 
 ### Data and estimation
 

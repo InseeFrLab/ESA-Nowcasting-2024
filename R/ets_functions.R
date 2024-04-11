@@ -37,13 +37,6 @@ run_ETS <- function(challenge, challenges_info, data_info, models_info) {
   parameters <- c(list(challenge = challenge, challenges_info = challenges_info, data_info = data_info), models_info$ETS[[challenge]])
   ets <- do.call(estimate_ets, parameters)
 
-  # if (challenge == "TOURISM") {
-  #   # Model identified without COVID
-  #   # Could be changed for AT and HR
-  #   ets <- ets |>
-  #     fabletools::refit(build_data_ets(challenge, challenges_info, data_info), reinitialise = FALSE, reestimate = FALSE)
-  # }
-
   preds_ets <- ets |>
     # forecast over 12 months and then filter to the expected forecast date
     fabletools::forecast(h = "12 months") |>

@@ -45,9 +45,9 @@ build_data_lstm_one_country <- function(large_data,
       month, year,
       !!challenge_to_predict, !!challenge_minus_1_month
     ))
-  # if (challenge == "TOURISM") {
+
   df <- df |> select(-!!challenge_minus_1_year)
-  # }
+
 
   # Variables absent for the last month
   df_current_date <- df |>

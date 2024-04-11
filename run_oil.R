@@ -1,8 +1,7 @@
 #' Pipeline for OIL challenge
 #'
 #' This pipeline executes five different models (Reg-Arima, DFM, XGBoost, ETS, 
-#' LSTM) that were utilized in the ESA Nowcasting Challenge. The purpose is to 
-#' perform nowcasting of the Production Volume in Industry based on these models. 
+#' LSTM) that were utilized in the ESA Nowcasting Challenge.
 #' If the `SAVE_TO_S3` variable is set to TRUE, the submission can be saved in 
 #' a S3 bucket.
 
